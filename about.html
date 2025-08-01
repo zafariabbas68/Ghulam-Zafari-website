@@ -12,22 +12,7 @@
             position: relative;
             font-size: 1.1rem;
             line-height: 1.7;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('assets/images/Ghulam.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            z-index: -2;
-            opacity: 0.3;
-            filter: brightness(0.8);
+            background-color: #0a192f;
         }
 
         .page-header {
@@ -51,6 +36,10 @@
         .about-section {
             position: relative;
             padding: 60px 0;
+            background-image: url('assets/images/Ghulam.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .about-section::before {
@@ -61,7 +50,7 @@
             width: 100%;
             height: 100%;
             background: rgba(10, 25, 47, 0.85);
-            z-index: -1;
+            z-index: 0;
         }
 
         .about-content {
@@ -69,6 +58,8 @@
             gap: 40px;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
         .about-text {
@@ -127,20 +118,6 @@
             margin-bottom: 12px;
             color: #8892b0;
             line-height: 1.6;
-        }
-
-        .about-image {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .about-image img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            border: 3px solid rgba(100, 255, 218, 0.2);
         }
 
         .personal-info {
@@ -202,15 +179,6 @@
             .about-content {
                 flex-direction: column;
             }
-
-            .about-image {
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .about-image img {
-                max-width: 300px;
-            }
         }
 
         @media (max-width: 768px) {
@@ -236,14 +204,6 @@
 
             .skills-grid {
                 grid-template-columns: 1fr 1fr;
-            }
-
-            .about-image {
-                flex-direction: column;
-            }
-
-            .about-image img {
-                max-width: 100%;
             }
         }
 
@@ -344,21 +304,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <img src="assets/images/profile.jpg" alt="Ghulam Abbas Zafari">
-                        <div class="personal-info">
-                            <h3>Personal Information</h3>
-                            <ul>
-                                <li><strong>Email:</strong> ghulamabbas.zafari@gmail.com</li>
-                                <li><strong>Phone:</strong> (+39) 379-138-7487</li>
-                                <li><strong>Address:</strong> Via Vittorio Veneto 22, 20091 Bresso, Italy</li>
-                                <li><strong>Languages:</strong> Persian (Dari), English (C2), Italian (B1)</li>
-                            </ul>
-                            <div class="social-links">
-                                <a href="https://github.com/zafariabbas68" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="https://wa.me/393791387487" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                <a href="mailto:ghulamabbas.zafari@gmail.com"><i class="fas fa-envelope"></i></a>
-                            </div>
+                    <div class="personal-info">
+                        <h3>Personal Information</h3>
+                        <ul>
+                            <li><strong>Email:</strong> ghulamabbas.zafari@gmail.com</li>
+                            <li><strong>Phone:</strong> (+39) 379-138-7487</li>
+                            <li><strong>Address:</strong> Via Vittorio Veneto 22, 20091 Bresso, Italy</li>
+                            <li><strong>Languages:</strong> Persian (Dari), English (C2), Italian (B1)</li>
+                        </ul>
+                        <div class="social-links">
+                            <a href="https://github.com/zafariabbas68" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://wa.me/393791387487" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            <a href="mailto:ghulamabbas.zafari@gmail.com"><i class="fas fa-envelope"></i></a>
                         </div>
                     </div>
                 </div>
