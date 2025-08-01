@@ -41,3 +41,58 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+// Add to your script.js or projects.js
+document.addEventListener('DOMContentLoaded', function() {
+    const slider = document.querySelector('.comparison-slider');
+    const beforeImg = document.querySelector('.map-img:last-child');
+
+    if (slider && beforeImg) {
+        let isDragging = false;
+
+        slider.addEventListener('mousedown', function() {
+            isDragging = true;
+        });
+
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+
+        document.addEventListener('mousemove', function(e) {
+            if (!isDragging) return;
+
+            const container = slider.parentElement;
+            const containerRect = container.getBoundingClientRect();
+            let xPos = e.clientX - containerRect.left;
+
+            // Keep within bounds
+            xPos = Math.max(0, Math.min(xPos, containerRect.width));
+
+            const percent = (xPos / containerRect.width) * 100;
+            beforeImg.style.width = `${percent}%`;
+            slider.style.left = `${percent}%`;
+        });
+
+        // Touch support for mobile
+        slider.addEventListener('touchstart', function() {
+            isDragging = true;
+        });
+
+        document.addEventListener('touchend', function() {
+            isDragging = false;
+        });
+
+        document.addEventListener('touchmove', function(e) {
+            if (!isDragging) return;
+
+            const container = slider.parentElement;
+            const containerRect = container.getBoundingClientRect();
+            let xPos = e.touches[0].clientX - containerRect.left;
+
+            xPos = Math.max(0, Math.min(xPos, containerRect.width));
+
+            const percent = (xPos / containerRect.width) * 100;
+            beforeImg.style.width = `${percent}%`;
+            slider.style.left = `${percent}%`;
+        });
+    }
+});
