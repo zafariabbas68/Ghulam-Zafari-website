@@ -5,11 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects | Ghulam Abbas Zafari</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
     <header class="glass-nav">
@@ -56,31 +54,11 @@
                     <!-- Project 1 -->
                     <div class="project-card" data-category="gis remote-sensing">
                         <div class="project-image">
-                            <div class="visualization-container">
-                                <div class="map-comparison">
-                                    <img src="assets/images/mediterranean_1985.jpg" alt="Mediterranean 1985" class="map-img">
-                                    <img src="assets/images/mediterranean_2022.jpg" alt="Mediterranean 2022" class="map-img">
-                                    <div class="comparison-slider">
-                                        <div class="slider-handle"></div>
-                                    </div>
-                                </div>
-                                <div class="legend">
-                                    <div class="legend-item">
-                                        <span class="color-box forest"></span>
-                                        <span>Forest</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <span class="color-box urban"></span>
-                                        <span>Urban</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <span class="color-box water"></span>
-                                        <span>Water</span>
-                                    </div>
-                                    <div class="legend-item">
-                                        <span class="color-box agriculture"></span>
-                                        <span>Agriculture</span>
-                                    </div>
+                            <img src="assets/images/projects/mediterranean_1985.jpg" alt="Mediterranean Land Cover Analysis">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Land Cover Analysis</h3>
+                                    <p>1985-2022 Comparison</p>
                                 </div>
                             </div>
                         </div>
@@ -107,7 +85,13 @@
                     <!-- Project 2 -->
                     <div class="project-card" data-category="data-science">
                         <div class="project-image">
-                            <div id="crimeHeatmap" style="height: 400px; width: 100%;"></div>
+                            <img src="assets/images/projects/boston-crime.jpg" alt="Boston Crime Analysis">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Crime Analysis</h3>
+                                    <p>Data Cleaning Pipeline</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-info">
                             <h3>Data Cleaning and Analysis Pipeline – Boston Crime Dataset</h3>
@@ -132,7 +116,13 @@
                     <!-- Project 3 -->
                     <div class="project-card" data-category="web-development gis">
                         <div class="project-image">
-                            <div id="airQualityDashboard" style="height: 400px; width: 100%;"></div>
+                            <img src="assets/images/projects/air-quality.jpg" alt="Air Quality Dashboard">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Air Quality</h3>
+                                    <p>Real-time Monitoring</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-info">
                             <h3>Air Quality Monitoring Dashboard</h3>
@@ -157,7 +147,13 @@
                     <!-- Project 4 -->
                     <div class="project-card" data-category="gis web-development">
                         <div class="project-image">
-                            <div id="isochroneMap" style="height: 400px; width: 100%;"></div>
+                            <img src="assets/images/projects/newyork-isochrones.gif" alt="SphereStats Library">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>SphereStats</h3>
+                                    <p>Geospatial Library</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-info">
                             <h3>SphereStats – Geospatial Python Library</h3>
@@ -182,7 +178,13 @@
                     <!-- Project 5 -->
                     <div class="project-card" data-category="data-science">
                         <div class="project-image">
-                            <div id="netflixChart" style="height: 400px; width: 100%;"></div>
+                            <img src="assets/images/projects/netflix.jpg" alt="Netflix Analysis">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Netflix</h3>
+                                    <p>Content Analysis</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-info">
                             <h3>Netflix Dataset: Exploratory and Predictive Analysis</h3>
@@ -207,7 +209,13 @@
                     <!-- Project 6 -->
                     <div class="project-card" data-category="gis remote-sensing">
                         <div class="project-image">
-                            <div id="landslideMap" style="height: 400px; width: 100%;"></div>
+                            <img src="assets/images/projects/landslide.jpg" alt="Landslide Susceptibility">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h3>Landslide</h3>
+                                    <p>Susceptibility Mapping</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="project-info">
                             <h3>Landslide Susceptibility Map and Hazard Analysis</h3>
@@ -269,261 +277,30 @@
         </div>
     </footer>
 
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
     <script>
-        // Mobile menu toggle
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-                menuToggle.classList.toggle('active');
-            });
-
-            // Project filtering
-            const filterButtons = document.querySelectorAll('.filter-btn');
-            const projectCards = document.querySelectorAll('.project-card');
-
-            filterButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    filterButtons.forEach(btn => btn.classList.remove('active'));
-                    this.classList.add('active');
-
-                    const filterValue = this.getAttribute('data-filter');
-
-                    projectCards.forEach(card => {
-                        if (filterValue === 'all' || card.getAttribute('data-category').includes(filterValue)) {
-                            card.style.display = 'flex';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            });
-
-            // Map comparison slider
-            const slider = document.querySelector('.comparison-slider');
-            const beforeImg = document.querySelector('.map-img:last-child');
-
-            if (slider && beforeImg) {
-                let isDragging = false;
-
-                slider.addEventListener('mousedown', function() {
-                    isDragging = true;
-                });
-
-                document.addEventListener('mouseup', function() {
-                    isDragging = false;
-                });
-
-                document.addEventListener('mousemove', function(e) {
-                    if (!isDragging) return;
-
-                    const container = slider.parentElement;
-                    const containerRect = container.getBoundingClientRect();
-                    let xPos = e.clientX - containerRect.left;
-
-                    xPos = Math.max(0, Math.min(xPos, containerRect.width));
-
-                    const percent = (xPos / containerRect.width) * 100;
-                    beforeImg.style.width = `${percent}%`;
-                    slider.style.left = `${percent}%`;
-                });
-
-                // Initialize visualizations
-                initVisualizations();
-            }
-
-            // Initialize particles.js if element exists
-            if (document.getElementById('particles-js')) {
-                particlesJS('particles-js', {
-                    particles: {
-                        number: { value: 80, density: { enable: true, value_area: 800 } },
-                        color: { value: "#64ffda" },
-                        shape: { type: "circle" },
-                        opacity: { value: 0.5, random: true },
-                        size: { value: 3, random: true },
-                        line_linked: { enable: true, distance: 150, color: "#64ffda", opacity: 0.3, width: 1 },
-                        move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
-                    },
-                    interactivity: {
-                        detect_on: "canvas",
-                        events: {
-                            onhover: { enable: true, mode: "repulse" },
-                            onclick: { enable: true, mode: "push" }
-                        }
-                    }
-                });
-            }
-        });
-
-        function initVisualizations() {
-            // Crime Heatmap
-            const crimeData = {
-                z: [
-                    [10, 20, 30, 40, 50, 60, 70, 80, 90, 100],
-                    [20, 30, 40, 50, 60, 70, 80, 90, 100, 110],
-                    [30, 40, 50, 60, 70, 80, 90, 100, 110, 120],
-                    [40, 50, 60, 70, 80, 90, 100, 110, 120, 130],
-                    [50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
-                    [60, 70, 80, 90, 100, 110, 120, 130, 140, 150],
-                    [70, 80, 90, 100, 110, 120, 130, 140, 150, 160],
-                    [80, 90, 100, 110, 120, 130, 140, 150, 160, 170],
-                    [90, 100, 110, 120, 130, 140, 150, 160, 170, 180],
-                    [100, 110, 120, 130, 140, 150, 160, 170, 180, 190]
-                ],
-                x: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                y: ['12AM', '3AM', '6AM', '9AM', '12PM', '3PM', '6PM', '9PM', '12AM'],
-                type: 'heatmap',
-                colorscale: 'Viridis'
-            };
-
-            Plotly.newPlot('crimeHeatmap', [crimeData], {
-                title: 'Crime Occurrence by Time and Day',
-                margin: { t: 30, b: 30, l: 50, r: 30 }
-            });
-
-            // Air Quality Dashboard
-            const airQualityData = [
-                {
-                    x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    y: [45, 48, 52, 55, 60, 65, 70, 68, 62, 58, 53, 47],
-                    name: 'PM2.5',
-                    type: 'line+markers',
-                    line: { color: '#e74c3c' }
+        // Initialize particles.js if element exists
+        if (document.getElementById('particles-js')) {
+            particlesJS('particles-js', {
+                particles: {
+                    number: { value: 80, density: { enable: true, value_area: 800 } },
+                    color: { value: "#64ffda" },
+                    shape: { type: "circle" },
+                    opacity: { value: 0.5, random: true },
+                    size: { value: 3, random: true },
+                    line_linked: { enable: true, distance: 150, color: "#64ffda", opacity: 0.3, width: 1 },
+                    move: { enable: true, speed: 2, direction: "none", random: true, straight: false, out_mode: "out" }
                 },
-                {
-                    x: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-                    y: [60, 63, 67, 70, 75, 80, 85, 82, 77, 73, 68, 62],
-                    name: 'PM10',
-                    type: 'line+markers',
-                    line: { color: '#3498db' }
+                interactivity: {
+                    detect_on: "canvas",
+                    events: {
+                        onhover: { enable: true, mode: "repulse" },
+                        onclick: { enable: true, mode: "push" }
+                    }
                 }
-            ];
-
-            Plotly.newPlot('airQualityDashboard', airQualityData, {
-                title: 'Monthly Air Quality Index',
-                xaxis: { title: 'Month' },
-                yaxis: { title: 'Concentration (µg/m³)' },
-                margin: { t: 30, b: 50, l: 50, r: 30 }
             });
-
-            // Isochrone Map
-            const isochroneMap = L.map('isochroneMap').setView([40.7128, -74.0060], 12);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(isochroneMap);
-
-            const isochroneData = {
-                "type": "FeatureCollection",
-                "features": [
-                    {
-                        "type": "Feature",
-                        "properties": { "time": 5, "color": "#2c7bb6" },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [[[-74.02,40.71],[-74.02,40.72],[-74.01,40.72],[-74.01,40.71],[-74.02,40.71]]]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": { "time": 10, "color": "#abd9e9" },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [[[-74.03,40.70],[-74.03,40.73],[-74.00,40.73],[-74.00,40.70],[-74.03,40.70]]]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": { "time": 15, "color": "#ffffbf" },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [[[-74.04,40.69],[-74.04,40.74],[-73.99,40.74],[-73.99,40.69],[-74.04,40.69]]]
-                        }
-                    }
-                ]
-            };
-
-            L.geoJSON(isochroneData, {
-                style: function(feature) {
-                    return {
-                        fillColor: feature.properties.color,
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
-                    };
-                }
-            }).addTo(isochroneMap);
-
-            // Netflix Chart
-            const netflixData = [
-                {
-                    labels: ['Documentaries', 'Comedies', 'Dramas', 'Action', 'Horror', 'Sci-Fi'],
-                    values: [120, 85, 150, 200, 60, 90],
-                    type: 'pie',
-                    marker: {
-                        colors: ['#e63946', '#457b9d', '#1d3557', '#a8dadc', '#f1faee', '#ffbe0b']
-                    }
-                }
-            ];
-
-            Plotly.newPlot('netflixChart', netflixData, {
-                title: 'Content Distribution by Genre',
-                margin: { t: 30, b: 30, l: 30, r: 30 }
-            });
-
-            // Landslide Map
-            const landslideMap = L.map('landslideMap').setView([34.0522, -118.2437], 10);
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(landslideMap);
-
-            const landslideZones = {
-                "type": "FeatureCollection",
-                "features": [
-                    {
-                        "type": "Feature",
-                        "properties": { "risk": "high", "color": "#d7191c" },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [[[-118.30,34.10],[-118.28,34.10],[-118.28,34.12],[-118.30,34.12],[-118.30,34.10]]]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": { "risk": "medium", "color": "#fdae61" },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [[[-118.32,34.08],[-118.30,34.08],[-118.30,34.10],[-118.32,34.10],[-118.32,34.08]]]
-                        }
-                    },
-                    {
-                        "type": "Feature",
-                        "properties": { "risk": "low", "color": "#a6d96a" },
-                        "geometry": {
-                            "type": "Polygon",
-                            "coordinates": [[[-118.34,34.06],[-118.32,34.06],[-118.32,34.08],[-118.34,34.08],[-118.34,34.06]]]
-                        }
-                    }
-                ]
-            };
-
-            L.geoJSON(landslideZones, {
-                style: function(feature) {
-                    return {
-                        fillColor: feature.properties.color,
-                        weight: 2,
-                        opacity: 1,
-                        color: 'white',
-                        dashArray: '3',
-                        fillOpacity: 0.7
-                    };
-                }
-            }).addTo(landslideMap);
         }
     </script>
 </body>
