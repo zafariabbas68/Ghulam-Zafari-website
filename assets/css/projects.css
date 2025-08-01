@@ -1,0 +1,54 @@
+/* Image Container Styles */
+.project-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Specific Image Adjustments */
+.crime-img, .dashboard-img, .analytics-img, .susceptibility-img {
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.library-gif {
+    border-radius: 8px 8px 0 0;
+}
+
+/* Fallback for missing images */
+.project-visual {
+    background-color: #f0f4f8;
+    position: relative;
+}
+
+.project-visual::after {
+    content: "Image not available";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #718096;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.project-visual img[src=""]::before,
+.project-visual img:not([src])::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f4f8;
+}
+
+.project-visual img[src=""]::after,
+.project-visual img:not([src])::after {
+    content: "Image not loaded";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #718096;
+    font-size: 0.9rem;
+}
