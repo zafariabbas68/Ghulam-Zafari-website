@@ -8,6 +8,62 @@
     <link rel="stylesheet" href="assets/css/animations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Mobile Menu Fix */
+        .glass-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 992px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: rgba(255, 255, 255, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .nav-links li a {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Animated Background -->
@@ -20,7 +76,7 @@
                 <span class="logo-icon"><i class="fas fa-map-marked-alt"></i></span>
                 <span class="logo-text">Ghulam Abbas Zafari</span>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="navLinks">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="projects.html">Projects</a></li>
@@ -28,7 +84,7 @@
                 <li><a href="experience.html">Experience</a></li>
                 <li><a href="contact.html" class="contact-btn">Contact</a></li>
             </ul>
-            <div class="menu-toggle">
+            <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
@@ -146,13 +202,40 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2023 Ghulam Abbas Zafari. All rights reserved.</p>
+                <p>&copy; <span id="currentYear"></span> Ghulam Abbas Zafari. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <!-- Scripts -->
     <script src="assets/js/particles.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuToggle.querySelector('i').classList.toggle('fa-times');
+        });
+
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuToggle.querySelector('i').classList.remove('fa-times');
+            });
+        });
+
+        // Update year automatically
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Initialize particles.js if needed
+        if(typeof particlesJS !== 'undefined') {
+            particlesJS.load('particles-js', 'assets/js/particles-config.json', function() {
+                console.log('Particles.js loaded');
+            });
+        }
+    </script>
 </body>
 </html>
