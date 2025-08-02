@@ -17,22 +17,22 @@
             --highlight-color: #f8d56b;
         }
 
-        /* Background and particles */
+        /* Background with satellite image */
         body {
             position: relative;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
             color: var(--dark-color);
+            overflow-x: hidden;
         }
 
-        .background-overlay {
+        .background-image {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.7);
+            background: url('assets/images/Satellite_imagery.png') center/cover no-repeat;
+            opacity: 0.15; /* Adjust transparency here */
             z-index: -2;
         }
 
@@ -68,35 +68,6 @@
             font-size: 1.8rem;
         }
 
-        /* Header Section */
-        .page-header {
-            position: relative;
-            padding: 8rem 0;
-            overflow: hidden;
-            background: linear-gradient(to right, rgba(44,62,80,0.9), rgba(52,152,219,0.8));
-            color: white;
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .page-header p {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        }
-
         /* Hero Section */
         .hero {
             position: relative;
@@ -106,18 +77,6 @@
             color: white;
             margin-bottom: 4rem;
             text-align: center;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('assets/images/GAZ.png') center/cover no-repeat;
-            opacity: 0.1;
-            z-index: -1;
         }
 
         .hero-title {
@@ -183,7 +142,7 @@
         /* Skills Section */
         .skills-section {
             padding: 5rem 0;
-            background-color: #f9fbfd;
+            background-color: rgba(249, 251, 253, 0.9); /* Slightly transparent */
         }
 
         .section-header {
@@ -210,7 +169,7 @@
         }
 
         .skill-card {
-            background: white;
+            background: rgba(255, 255, 255, 0.95); /* Slightly transparent */
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.05);
@@ -345,39 +304,6 @@
             stroke-width: 0.8;
             fill: none;
             animation: float 15s infinite ease-in-out;
-        }
-
-        .triangles-bg polygon:nth-child(1) {
-            animation-delay: 0s;
-            stroke: rgba(255,255,255,0.7);
-        }
-        .triangles-bg polygon:nth-child(2) {
-            animation-delay: -3s;
-            stroke: rgba(255,255,255,0.5);
-        }
-        .triangles-bg polygon:nth-child(3) {
-            animation-delay: -6s;
-            stroke: rgba(255,255,255,0.4);
-        }
-        .triangles-bg polygon:nth-child(4) {
-            animation-delay: -2s;
-            stroke: rgba(255,255,255,0.6);
-        }
-        .triangles-bg polygon:nth-child(5) {
-            animation-delay: -5s;
-            stroke: rgba(255,255,255,0.5);
-        }
-        .triangles-bg polygon:nth-child(6) {
-            animation-delay: -8s;
-            stroke: rgba(255,255,255,0.4);
-        }
-        .triangles-bg polygon:nth-child(7) {
-            animation-delay: -1s;
-            stroke: rgba(255,255,255,0.6);
-        }
-        .triangles-bg polygon:nth-child(8) {
-            animation-delay: -4s;
-            stroke: rgba(255,255,255,0.5);
         }
 
         @keyframes float {
@@ -621,8 +547,8 @@
     </style>
 </head>
 <body>
-    <!-- Background Overlay -->
-    <div class="background-overlay"></div>
+    <!-- Satellite Imagery Background -->
+    <div class="background-image"></div>
 
     <!-- Navigation -->
     <header class="glass-nav">
