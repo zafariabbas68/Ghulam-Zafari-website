@@ -17,22 +17,22 @@
             --highlight-color: #f8d56b;
         }
 
-        /* Background and particles */
+        /* Background with satellite image */
         body {
             position: relative;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
             color: var(--dark-color);
+            overflow-x: hidden;
         }
 
-        .background-overlay {
+        .satellite-background {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.7);
+            background: url('assets/images/Satellite.png') center/cover no-repeat;
+            opacity: 0.15;
             z-index: -2;
         }
 
@@ -71,7 +71,7 @@
         /* Header Section */
         .page-header {
             position: relative;
-            padding: 8rem 0;
+            padding: 6rem 0;
             overflow: hidden;
             background: linear-gradient(to right, rgba(44,62,80,0.9), rgba(52,152,219,0.8));
             color: white;
@@ -82,14 +82,14 @@
         .page-header h1 {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 3.5rem;
+            font-size: 3rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .page-header p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 2.5rem;
             opacity: 0.95;
             color: #ffffff;
@@ -100,7 +100,7 @@
         /* About Section */
         .about-section {
             padding: 5rem 0;
-            background-color: #f9fbfd;
+            background-color: rgba(249, 251, 253, 0.9);
         }
 
         .about-content {
@@ -130,7 +130,7 @@
 
         .about-text {
             flex: 2;
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 3rem;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
@@ -168,7 +168,7 @@
         }
 
         .skill-category {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 2rem;
             border-radius: 10px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
@@ -206,7 +206,7 @@
         }
 
         .personal-info {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.95);
             padding: 2.5rem;
             border-radius: 15px;
             margin-top: 3rem;
@@ -234,7 +234,7 @@
             font-size: 1.1rem;
             display: flex;
             align-items: center;
-            word-break: break-word; /* Added to fix email overflow */
+            word-break: break-word;
         }
 
         .personal-info strong {
@@ -243,7 +243,7 @@
             margin-right: 0.5rem;
             min-width: 100px;
             display: inline-block;
-            flex-shrink: 0; /* Added to prevent label from shrinking */
+            flex-shrink: 0;
         }
 
         .social-links {
@@ -471,7 +471,7 @@
             }
 
             .page-header {
-                padding: 6rem 0;
+                padding: 5rem 0;
             }
         }
 
@@ -521,8 +521,8 @@
     </style>
 </head>
 <body>
-    <!-- Background Overlay -->
-    <div class="background-overlay"></div>
+    <!-- Satellite Imagery Background -->
+    <div class="satellite-background"></div>
 
     <!-- Navigation -->
     <header class="glass-nav">
