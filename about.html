@@ -234,6 +234,7 @@
             font-size: 1.1rem;
             display: flex;
             align-items: center;
+            word-break: break-word; /* Added to fix email overflow */
         }
 
         .personal-info strong {
@@ -242,6 +243,7 @@
             margin-right: 0.5rem;
             min-width: 100px;
             display: inline-block;
+            flex-shrink: 0; /* Added to prevent label from shrinking */
         }
 
         .social-links {
