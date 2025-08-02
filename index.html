@@ -68,10 +68,10 @@
             font-size: 1.8rem;
         }
 
-        /* Hero Section */
+        /* Hero Section - Reduced height */
         .hero {
             position: relative;
-            padding: 8rem 0;
+            padding: 5rem 0 3rem; /* Reduced padding */
             overflow: hidden;
             background: linear-gradient(to right, rgba(44,62,80,0.9), rgba(52,152,219,0.8));
             color: white;
@@ -82,15 +82,15 @@
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            font-size: 3rem; /* Slightly smaller */
+            margin-bottom: 1rem; /* Reduced margin */
             line-height: 1.2;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.3rem; /* Slightly smaller */
+            margin-bottom: 2rem; /* Reduced margin */
             opacity: 0.95;
             color: #ffffff;
             font-weight: 500;
@@ -221,12 +221,13 @@
         /* Profile Image */
         .hero-image {
             position: relative;
+            margin-top: 2rem; /* Added margin to separate from text */
         }
 
         .image-wrapper {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 350px; /* Slightly smaller */
+            height: 350px; /* Slightly smaller */
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
@@ -449,7 +450,7 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding: 6rem 0;
+                padding: 4rem 0 2rem; /* Reduced padding */
             }
 
             .hero-title {
