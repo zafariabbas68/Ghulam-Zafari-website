@@ -129,23 +129,29 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
         .project-card {
             display: flex;
+            flex-direction: column;
             background: white;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border: 1px solid rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .project-visual {
-            flex: 1;
-            min-width: 300px;
             position: relative;
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -156,7 +162,7 @@
         /* Consistent image/video container styles */
         .visual-container {
             width: 100%;
-            height: 350px;
+            height: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -169,54 +175,63 @@
 
         .visual-container img,
         .visual-container video {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
         .project-details {
-            flex: 2;
-            padding: 2.5rem;
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card h3 {
             color: var(--primary-color);
             font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
 
         .project-meta {
             display: flex;
             gap: 15px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             color: #666;
             font-size: 0.9rem;
         }
 
         .project-description {
             color: #555;
-            font-size: 1.1rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .key-findings {
             margin-bottom: 1.5rem;
         }
 
         .key-findings h4 {
             color: var(--primary-color);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.8rem;
         }
 
         .key-findings ul {
             padding-left: 20px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0;
         }
 
         .key-findings li {
             margin-bottom: 8px;
             color: #666;
             position: relative;
+            font-size: 0.95rem;
         }
 
         .key-findings li:before {
@@ -229,29 +244,33 @@
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 1.5rem;
         }
 
         .project-tech span {
             background: rgba(52, 152, 219, 0.1);
             color: var(--secondary-color);
-            padding: 5px 12px;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         .project-actions {
             display: flex;
-            gap: 15px;
+            gap: 10px;
+            margin-top: auto;
         }
 
         .btn {
-            padding: 10px 20px;
+            padding: 8px 16px;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
+            font-size: 0.9rem;
+            text-align: center;
+            flex: 1;
         }
 
         .primary-btn {
@@ -281,24 +300,24 @@
             bottom: 15px;
             left: 15px;
             background: rgba(255,255,255,0.9);
-            padding: 10px;
+            padding: 8px;
             border-radius: 5px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
         }
 
         .legend-item {
             display: flex;
             align-items: center;
-            margin-right: 10px;
+            margin-right: 5px;
         }
 
         .color-box {
             display: inline-block;
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             margin-right: 5px;
             border-radius: 2px;
         }
@@ -313,14 +332,14 @@
             bottom: 15px;
             left: 15px;
             background: rgba(255,255,255,0.9);
-            padding: 5px 10px;
+            padding: 5px 8px;
             border-radius: 5px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
         }
 
         .legend-scale {
             display: flex;
-            gap: 10px;
+            gap: 8px;
         }
 
         .low-risk { color: #4CAF50; }
@@ -514,20 +533,11 @@
 
         /* Responsive styles */
         @media (max-width: 992px) {
-            .project-card {
-                flex-direction: column;
-            }
-
-            .project-visual,
-            .project-details {
-                width: 100%;
+            .projects-grid {
+                grid-template-columns: 1fr;
             }
 
             .project-visual {
-                margin-bottom: 0;
-            }
-
-            .visual-container {
                 height: 300px;
             }
 
@@ -546,16 +556,19 @@
             }
 
             .project-card h3 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
 
             .project-details {
-                padding: 1.5rem;
+                padding: 1.25rem;
             }
 
             .project-actions {
                 flex-direction: column;
-                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
             }
 
             .visual-container {
@@ -577,7 +590,7 @@
                 font-size: 0.8rem;
             }
 
-            .visual-container {
+            .project-visual {
                 height: 200px;
             }
         }
@@ -644,25 +657,23 @@
                                 <span class="date">2024</span>
                                 <span class="duration">2 months</span>
                             </div>
-                            <p class="project-description">Interactive 3D visualization tool that maps global earthquake activity from 2020 to 2024, fetching near-real-time seismic data from USGS and rendering an animated globe with magnitude-scaled markers color-coded by depth.</p>
+                            <p class="project-description">Interactive 3D visualization tool that maps global earthquake activity from 2020 to 2024, fetching near-real-time seismic data from USGS.</p>
                             <div class="key-findings">
                                 <h4>Key Features:</h4>
                                 <ul>
-                                    <li>Real-time data integration from USGS API</li>
-                                    <li>Interactive 3D globe visualization</li>
-                                    <li>Magnitude-scaled and depth-color-coded markers</li>
-                                    <li>Educational tool for geoscience</li>
+                                    <li>Real-time data integration</li>
+                                    <li>Interactive 3D globe</li>
+                                    <li>Magnitude-scaled markers</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>Three.js</span>
                                 <span>USGS API</span>
-                                <span>GeoJSON</span>
                             </div>
                             <div class="project-actions">
-                                <a href="assets/reports/seismic_globe_report.pdf" target="_blank" class="btn primary-btn">Technical Report</a>
-                                <a href="#" class="btn secondary-btn">Live Demo</a>
+                                <a href="assets/reports/seismic_globe_report.pdf" target="_blank" class="btn primary-btn">Report</a>
+                                <a href="#" class="btn secondary-btn">Demo</a>
                             </div>
                         </div>
                     </div>
@@ -680,25 +691,23 @@
                                 <span class="date">2024</span>
                                 <span class="duration">3 months</span>
                             </div>
-                            <p class="project-description">Python-based geospatial visualization tool that analyzes and maps key urban features including parks, libraries, museums, and road networks using OpenStreetMap data for urban planning and research.</p>
+                            <p class="project-description">Python-based geospatial visualization tool that analyzes and maps key urban features using OpenStreetMap data.</p>
                             <div class="key-findings">
                                 <h4>Key Features:</h4>
                                 <ul>
-                                    <li>Visualization of parks, libraries, museums and roads</li>
-                                    <li>Comparative city analysis (Boston, Barcelona, Amsterdam)</li>
-                                    <li>OpenStreetMap data integration</li>
-                                    <li>Urban planning insights</li>
+                                    <li>Visualization of urban features</li>
+                                    <li>Comparative city analysis</li>
+                                    <li>OpenStreetMap integration</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>OSMnx</span>
                                 <span>GeoPandas</span>
-                                <span>Matplotlib</span>
                             </div>
                             <div class="project-actions">
-                                <a href="assets/reports/City_insight_report.pdf" target="_blank" class="btn primary-btn">Technical Report</a>
-                                <a href="#" class="btn secondary-btn">View Code</a>
+                                <a href="assets/reports/City_insight_report.pdf" target="_blank" class="btn primary-btn">Report</a>
+                                <a href="#" class="btn secondary-btn">Code</a>
                             </div>
                         </div>
                     </div>
@@ -712,7 +721,6 @@
                                     <div class="legend-item"><span class="color-box forest"></span> Forest</div>
                                     <div class="legend-item"><span class="color-box urban"></span> Urban</div>
                                     <div class="legend-item"><span class="color-box water"></span> Water</div>
-                                    <div class="legend-item"><span class="color-box agriculture"></span> Agriculture</div>
                                 </div>
                             </div>
                         </div>
@@ -722,24 +730,23 @@
                                 <span class="date">2023</span>
                                 <span class="duration">3 months</span>
                             </div>
-                            <p class="project-description">Comprehensive analysis of land cover transitions across 12 Mediterranean countries using Landsat and Sentinel-2 data, revealing critical environmental change patterns.</p>
+                            <p class="project-description">Analysis of land cover transitions across 12 Mediterranean countries using Landsat and Sentinel-2 data.</p>
                             <div class="key-findings">
                                 <h4>Key Insights:</h4>
                                 <ul>
-                                    <li>17.3% net forest cover reduction since 1985</li>
-                                    <li>Urban areas expanded by 142% in coastal regions</li>
-                                    <li>Identified 3 distinct transition clusters</li>
+                                    <li>17.3% forest cover reduction</li>
+                                    <li>142% urban expansion</li>
+                                    <li>3 transition clusters</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
-                                <span>Google Earth Engine</span>
+                                <span>Google Earth</span>
                                 <span>Random Forest</span>
                                 <span>PostGIS</span>
-                                <span>Python</span>
                             </div>
                             <div class="project-actions">
                                 <a href="projects/mediterranean-case-study.html" class="btn primary-btn">Case Study</a>
-                                <a href="https://github.com/zafariabbas68/mediterranean-landcover" target="_blank" class="btn secondary-btn">View Code</a>
+                                <a href="https://github.com/zafariabbas68/mediterranean-landcover" target="_blank" class="btn secondary-btn">Code</a>
                             </div>
                         </div>
                     </div>
@@ -757,24 +764,23 @@
                                 <span class="date">2022</span>
                                 <span class="duration">2 months</span>
                             </div>
-                            <p class="project-description">Advanced data pipeline for cleaning and analyzing 2.4M crime records, with predictive modeling achieving 91% classification accuracy.</p>
+                            <p class="project-description">Advanced data pipeline for cleaning and analyzing 2.4M crime records with 91% classification accuracy.</p>
                             <div class="key-findings">
                                 <h4>Key Insights:</h4>
                                 <ul>
-                                    <li>Identified 12 distinct crime patterns</li>
-                                    <li>Developed anomaly detection with 94% precision</li>
-                                    <li>Reduced data cleaning time by 78%</li>
+                                    <li>12 crime patterns</li>
+                                    <li>94% anomaly precision</li>
+                                    <li>78% faster cleaning</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>TensorFlow</span>
                                 <span>Scikit-learn</span>
-                                <span>Pandas</span>
                             </div>
                             <div class="project-actions">
-                                <a href="assets/reports/report-crimes.pdf" target="_blank" class="btn primary-btn">Technical Report</a>
-                                <a href="https://github.com/zafariabbas68/boston-crime-analysis" target="_blank" class="btn secondary-btn">View Code</a>
+                                <a href="assets/reports/report-crimes.pdf" target="_blank" class="btn primary-btn">Report</a>
+                                <a href="https://github.com/zafariabbas68/boston-crime-analysis" target="_blank" class="btn secondary-btn">Code</a>
                             </div>
                         </div>
                     </div>
@@ -792,25 +798,23 @@
                                 <span class="date">2023</span>
                                 <span class="duration">1 month</span>
                             </div>
-                            <p class="project-description">Interactive dashboard visualizing real-time air quality data from 47 sensors across Milan, with historical trend analysis and anomaly detection.</p>
+                            <p class="project-description">Interactive dashboard visualizing real-time air quality data from 47 sensors across Milan.</p>
                             <div class="key-findings">
                                 <h4>Key Features:</h4>
                                 <ul>
-                                    <li>Live sensor data updates every 5 minutes</li>
-                                    <li>Interactive time-series charts</li>
-                                    <li>Pollution hotspot detection</li>
+                                    <li>Live sensor updates</li>
+                                    <li>Time-series charts</li>
+                                    <li>Hotspot detection</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>Dash/Plotly</span>
                                 <span>PostgreSQL</span>
-                                <span>GeoJSON</span>
                             </div>
                             <div class="project-actions">
-                                <a href="https://air-quality-dashboard.onrender.com" target="_blank" class="btn primary-btn">Live Demo</a>
-                                <a href="assets/reports/Air_quality_technical_report.pdf" target="_blank" class="btn primary-btn">Technical Report</a>
-                                <a href="https://github.com/zafariabbas68/air-quality-dashboard" target="_blank" class="btn secondary-btn">View Code</a>
+                                <a href="https://air-quality-dashboard.onrender.com" target="_blank" class="btn primary-btn">Demo</a>
+                                <a href="https://github.com/zafariabbas68/air-quality-dashboard" target="_blank" class="btn secondary-btn">Code</a>
                             </div>
                         </div>
                     </div>
@@ -828,12 +832,12 @@
                                 <span class="date">2022-Present</span>
                                 <span class="duration">Ongoing</span>
                             </div>
-                            <p class="project-description">Open-source Python library for advanced geospatial analysis, featuring 12 core algorithms for routing, statistics, and network analysis.</p>
+                            <p class="project-description">Open-source Python library for advanced geospatial analysis with 12 core algorithms.</p>
                             <div class="key-findings">
                                 <h4>Key Features:</h4>
                                 <ul>
-                                    <li>3x faster than existing solutions</li>
-                                    <li>Comprehensive documentation</li>
+                                    <li>3x faster solutions</li>
+                                    <li>Comprehensive docs</li>
                                     <li>Modular architecture</li>
                                 </ul>
                             </div>
@@ -841,12 +845,10 @@
                                 <span>Python</span>
                                 <span>GeoPandas</span>
                                 <span>NetworkX</span>
-                                <span>PyPI</span>
                             </div>
                             <div class="project-actions">
-                                <a href="https://pypi.org/project/spherestats/" target="_blank" class="btn primary-btn">PyPI Page</a>
-                                <a href="assets/reports/SphereStats_technical_report.pdf" target="_blank" class="btn primary-btn">Technical Report</a>
-                                <a href="https://github.com/zafariabbas68/spherestats" target="_blank" class="btn secondary-btn">GitHub Repo</a>
+                                <a href="https://pypi.org/project/spherestats/" target="_blank" class="btn primary-btn">PyPI</a>
+                                <a href="https://github.com/zafariabbas68/spherestats" target="_blank" class="btn secondary-btn">Repo</a>
                             </div>
                         </div>
                     </div>
@@ -864,24 +866,23 @@
                                 <span class="date">2022</span>
                                 <span class="duration">3 weeks</span>
                             </div>
-                            <p class="project-description">Comprehensive analysis of Netflix's content library, identifying trends and building predictive models for viewer preferences.</p>
+                            <p class="project-description">Comprehensive analysis of Netflix's content library with predictive models.</p>
                             <div class="key-findings">
                                 <h4>Key Insights:</h4>
                                 <ul>
-                                    <li>Documentaries increased by 320% since 2015</li>
-                                    <li>Strong seasonal patterns in releases</li>
-                                    <li>87% accuracy in genre prediction</li>
+                                    <li>320% doc increase</li>
+                                    <li>Seasonal patterns</li>
+                                    <li>87% genre accuracy</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <span>Python</span>
                                 <span>Pandas</span>
                                 <span>Scikit-learn</span>
-                                <span>Matplotlib</span>
                             </div>
                             <div class="project-actions">
-                                <a href="projects/netflix-analysis.html" class="btn primary-btn">Full Analysis</a>
-                                <a href="https://github.com/zafariabbas68/netflix-analysis" target="_blank" class="btn secondary-btn">View Code</a>
+                                <a href="projects/netflix-analysis.html" class="btn primary-btn">Analysis</a>
+                                <a href="https://github.com/zafariabbas68/netflix-analysis" target="_blank" class="btn secondary-btn">Code</a>
                             </div>
                         </div>
                     </div>
@@ -906,24 +907,23 @@
                                 <span class="date">2021</span>
                                 <span class="duration">2 months</span>
                             </div>
-                            <p class="project-description">Machine learning-based susceptibility analysis for Northern Italy, identifying high-risk areas with 89% prediction accuracy.</p>
+                            <p class="project-description">Machine learning-based susceptibility analysis for Northern Italy with 89% accuracy.</p>
                             <div class="key-findings">
                                 <h4>Key Insights:</h4>
                                 <ul>
-                                    <li>Identified 23 high-risk zones</li>
-                                    <li>Rainfall triggers 78% of events</li>
-                                    <li>Slope stability threshold analysis</li>
+                                    <li>23 high-risk zones</li>
+                                    <li>78% rainfall triggers</li>
+                                    <li>Slope analysis</li>
                                 </ul>
                             </div>
                             <div class="project-tech">
                                 <span>ArcGIS</span>
                                 <span>GeoServer</span>
                                 <span>PostGIS</span>
-                                <span>Machine Learning</span>
                             </div>
                             <div class="project-actions">
-                                <a href="assets/reports/LANDSLIDE_SUSCEPTIBILITY.pdf" target="_blank" class="btn primary-btn">Technical Report</a>
-                                <a href="https://github.com/zafariabbas68/landslide-analysis" target="_blank" class="btn secondary-btn">View Code</a>
+                                <a href="assets/reports/LANDSLIDE_SUSCEPTIBILITY.pdf" target="_blank" class="btn primary-btn">Report</a>
+                                <a href="https://github.com/zafariabbas68/landslide-analysis" target="_blank" class="btn secondary-btn">Code</a>
                             </div>
                         </div>
                     </div>
