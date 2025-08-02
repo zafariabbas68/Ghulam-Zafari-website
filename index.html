@@ -243,15 +243,15 @@
             font-weight: 500;
         }
 
-        /* Profile Image Styling */
+        /* Profile Image Styling - Made Larger */
         .hero-image {
             position: relative;
         }
 
         .image-wrapper {
             position: relative;
-            width: 350px;
-            height: 350px;
+            width: 400px; /* Increased from 350px */
+            height: 400px; /* Increased from 350px */
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
@@ -303,7 +303,7 @@
             color: var(--accent-color);
         }
 
-        /* Footer */
+        /* Footer - Improved Visibility */
         .glass-footer {
             background: var(--primary-color);
             color: white;
@@ -318,15 +318,17 @@
         }
 
         .footer-about h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increased size */
             margin-bottom: 1.5rem;
             font-family: 'Playfair Display', serif;
+            color: white; /* Ensured white color */
         }
 
         .footer-about p {
-            opacity: 0.8;
+            opacity: 0.9; /* Increased opacity */
             line-height: 1.6;
             margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.9); /* Lighter text */
         }
 
         .social-links {
@@ -336,14 +338,15 @@
 
         .social-links a {
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 45px; /* Slightly larger */
+            height: 45px;
             border-radius: 50%;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.15); /* More visible */
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.3s ease;
+            font-size: 1.2rem;
         }
 
         .social-links a:hover {
@@ -352,38 +355,51 @@
         }
 
         .footer-links h3, .footer-contact h3 {
-            font-size: 1.5rem;
+            font-size: 1.8rem; /* Increased size */
             margin-bottom: 1.5rem;
             font-family: 'Playfair Display', serif;
+            color: white; /* Ensured white color */
         }
 
         .footer-links ul, .footer-contact ul {
             list-style: none;
+            padding-left: 0;
         }
 
         .footer-links li, .footer-contact li {
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem; /* Increased spacing */
         }
 
         .footer-links a {
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9); /* Lighter text */
             transition: all 0.3s ease;
+            font-size: 1.1rem; /* Slightly larger */
         }
 
         .footer-links a:hover {
             color: white;
-            padding-left: 5px;
+            padding-left: 8px; /* More noticeable animation */
         }
 
         .footer-contact i {
             margin-right: 10px;
             color: var(--secondary-color);
+            font-size: 1.2rem; /* Larger icons */
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            color: rgba(255,255,255,0.9); /* Lighter text */
+            font-size: 1.1rem; /* Slightly larger */
         }
 
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255,255,255,0.2); /* More visible line */
+            color: rgba(255,255,255,0.9); /* Lighter text */
+            font-size: 1.1rem;
         }
 
         /* Mobile Menu Fix */
@@ -443,6 +459,12 @@
             .hero-image {
                 margin-top: 2rem;
                 justify-content: center;
+            }
+
+            /* Adjust profile image size on mobile */
+            .image-wrapper {
+                width: 320px;
+                height: 320px;
             }
         }
 
