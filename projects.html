@@ -146,6 +146,33 @@
             flex: 1;
             min-width: 300px;
             position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        /* Consistent image/video container styles */
+        .visual-container {
+            width: 100%;
+            height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+
+        .visual-container img,
+        .visual-container video {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            display: block;
         }
 
         .project-details {
@@ -248,65 +275,57 @@
             transform: translateY(-2px);
         }
 
-        /* Visualization styles */
-        .visualization-container {
-            max-height: 400px;
-            overflow: hidden;
-            position: relative;
+        /* Legend styles */
+        .legend {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        .map-comparison {
-            height: 380px;
-            position: relative;
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 10px;
         }
 
-        .map-img {
-            max-height: 100%;
-            width: auto;
-            object-fit: contain;
+        .color-box {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            border-radius: 2px;
         }
 
-        .video-container {
-            max-height: 400px;
-            overflow: hidden;
+        .forest { background-color: #228B22; }
+        .urban { background-color: #8B0000; }
+        .water { background-color: #1E90FF; }
+        .agriculture { background-color: #FFD700; }
+
+        .risk-legend {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(255,255,255,0.9);
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.8rem;
         }
 
-        .project-video {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: contain;
+        .legend-scale {
+            display: flex;
+            gap: 10px;
         }
 
-        .image-container {
-            max-height: 400px;
-            overflow: hidden;
-        }
-
-        .project-image {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: contain;
-        }
-
-        .dashboard-preview,
-        .library-visual,
-        .analytics-visual,
-        .susceptibility-map {
-            max-height: 400px;
-            overflow: hidden;
-        }
-
-        .dashboard-img,
-        .library-gif,
-        .analytics-img,
-        .susceptibility-img {
-            width: 100%;
-            height: auto;
-            max-height: 380px;
-            object-fit: contain;
-        }
+        .low-risk { color: #4CAF50; }
+        .mid-risk { color: #FFC107; }
+        .high-risk { color: #F44336; }
 
         /* Triangle Network Background for Footer */
         .triangles-bg {
@@ -505,7 +524,11 @@
             }
 
             .project-visual {
-                margin-bottom: 20px;
+                margin-bottom: 0;
+            }
+
+            .visual-container {
+                height: 300px;
             }
 
             .page-header {
@@ -534,6 +557,10 @@
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .visual-container {
+                height: 250px;
+            }
         }
 
         @media (max-width: 576px) {
@@ -548,6 +575,10 @@
             .filter-btn {
                 padding: 6px 12px;
                 font-size: 0.8rem;
+            }
+
+            .visual-container {
+                height: 200px;
             }
         }
     </style>
@@ -600,7 +631,7 @@
                     <!-- New Project 1 - Seismic Globe -->
                     <div class="project-card" data-category="gis visualization">
                         <div class="project-visual">
-                            <div class="video-container">
+                            <div class="visual-container">
                                 <video autoplay loop muted playsinline class="project-video">
                                     <source src="assets/images/Earthquake_Globe_Animation.mp4" type="video/mp4">
                                     Your browser does not support the video tag.
@@ -639,7 +670,7 @@
                     <!-- New Project 2 - CityInsights -->
                     <div class="project-card" data-category="gis visualization">
                         <div class="project-visual">
-                            <div class="image-container">
+                            <div class="visual-container">
                                 <img src="assets/images/barcelona_roads_parks_libraries_museums.png" alt="CityInsights Visualization" class="project-image">
                             </div>
                         </div>
@@ -675,14 +706,8 @@
                     <!-- Project 1 - Mediterranean -->
                     <div class="project-card" data-category="gis remote-sensing">
                         <div class="project-visual">
-                            <div class="visualization-container">
-                                <div class="map-comparison">
-                                    <img src="assets/images/mediterranean_1985.jpg.jpg" alt="Mediterranean 1985" class="map-img">
-                                    <img src="assets/images/mediterranean_2022.jpg.png" alt="Mediterranean 2022" class="map-img">
-                                    <div class="comparison-slider">
-                                        <div class="slider-handle"></div>
-                                    </div>
-                                </div>
+                            <div class="visual-container">
+                                <img src="assets/images/mediterranean_1985.jpg.jpg" alt="Mediterranean Land Cover Comparison" class="project-image">
                                 <div class="legend">
                                     <div class="legend-item"><span class="color-box forest"></span> Forest</div>
                                     <div class="legend-item"><span class="color-box urban"></span> Urban</div>
@@ -722,8 +747,8 @@
                     <!-- Project 2 - Boston Crime -->
                     <div class="project-card" data-category="data-science">
                         <div class="project-visual">
-                            <div class="data-visualization">
-                                <img src="assets/images/boston-crime.jpg.jpg.jpg" alt="Boston Crime Analysis" class="crime-img">
+                            <div class="visual-container">
+                                <img src="assets/images/boston-crime.jpg.jpg.jpg" alt="Boston Crime Analysis" class="project-image">
                             </div>
                         </div>
                         <div class="project-details">
@@ -757,8 +782,8 @@
                     <!-- Project 3 - Air Quality -->
                     <div class="project-card" data-category="web-development gis">
                         <div class="project-visual">
-                            <div class="dashboard-preview">
-                                <img src="assets/images/air-quality.jpg.jpg" alt="Air Quality Dashboard" class="dashboard-img">
+                            <div class="visual-container">
+                                <img src="assets/images/air-quality.jpg.jpg" alt="Air Quality Dashboard" class="project-image">
                             </div>
                         </div>
                         <div class="project-details">
@@ -793,8 +818,8 @@
                     <!-- Project 4 - SphereStats -->
                     <div class="project-card" data-category="gis web-development">
                         <div class="project-visual">
-                            <div class="library-visual">
-                                <img src="assets/images/newyork_isochrones.gif" alt="SphereStats Demo" class="library-gif">
+                            <div class="visual-container">
+                                <img src="assets/images/newyork_isochrones.gif" alt="SphereStats Demo" class="project-image">
                             </div>
                         </div>
                         <div class="project-details">
@@ -829,8 +854,8 @@
                     <!-- Project 5 - Netflix -->
                     <div class="project-card" data-category="data-science">
                         <div class="project-visual">
-                            <div class="analytics-visual">
-                                <img src="assets/images/netflix.jpg.jpg" alt="Netflix Analysis" class="analytics-img">
+                            <div class="visual-container">
+                                <img src="assets/images/netflix.jpg.jpg" alt="Netflix Analysis" class="project-image">
                             </div>
                         </div>
                         <div class="project-details">
@@ -864,8 +889,8 @@
                     <!-- Project 6 - Landslide -->
                     <div class="project-card" data-category="gis remote-sensing">
                         <div class="project-visual">
-                            <div class="susceptibility-map">
-                                <img src="assets/images/landslide.jpg.jpg" alt="Landslide Susceptibility" class="susceptibility-img">
+                            <div class="visual-container">
+                                <img src="assets/images/landslide.jpg.jpg" alt="Landslide Susceptibility" class="project-image">
                                 <div class="risk-legend">
                                     <div class="legend-scale">
                                         <span class="low-risk">Low</span>
