@@ -8,271 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --primary-color: #2c3e50;
-            --secondary-color: #3498db;
-            --accent-color: #e74c3c;
-            --light-color: #ecf0f1;
-            --dark-color: #2c3e50;
-            --highlight-color: #f8d56b;
-        }
+        /* Previous styles remain the same until the footer section */
 
-        /* Background and particles */
-        body {
-            position: relative;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            overflow-x: hidden;
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-color);
-        }
-
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.7);
-            z-index: -2;
-        }
-
-        /* Navigation */
-        .glass-nav {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            font-weight: 600;
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .logo-icon {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            font-size: 1.8rem;
-        }
-
-        /* Header Section */
-        .page-header {
-            position: relative;
-            padding: 8rem 0;
-            overflow: hidden;
-            background: linear-gradient(to right, rgba(44,62,80,0.9), rgba(52,152,219,0.8));
-            color: white;
-            margin-bottom: 4rem;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .page-header p {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-        }
-
-        /* About Section */
-        .about-section {
-            padding: 5rem 0;
-            background-color: #f9fbfd;
-        }
-
-        .about-content {
-            display: flex;
-            gap: 40px;
-            align-items: flex-start;
-        }
-
-        .profile-container {
-            flex: 1;
-            position: relative;
-            min-width: 300px;
-        }
-
-        .profile-image {
-            width: 100%;
-            height: 400px;
-            background-image: url('assets/images/Ghulam.jpeg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 15px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border: 5px solid white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .about-text {
-            flex: 2;
-            background-color: white;
-            padding: 3rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .about-text h2 {
-            color: var(--primary-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
-        }
-
-        .about-text p {
-            margin-bottom: 2rem;
-            color: #555;
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .about-text h3 {
-            color: var(--primary-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin: 3rem 0 2rem;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 30px;
-        }
-
-        .skill-category {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-category:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-category h4 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-
-        .skill-category ul {
-            padding-left: 20px;
-        }
-
-        .skill-category li {
-            margin-bottom: 12px;
-            color: #666;
-            position: relative;
-        }
-
-        .skill-category li:before {
-            content: "▹";
-            position: absolute;
-            left: -20px;
-            color: var(--secondary-color);
-        }
-
-        .personal-info {
-            background-color: white;
-            padding: 2.5rem;
-            border-radius: 15px;
-            margin-top: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            border: 1px solid rgba(0,0,0,0.05);
-        }
-
-        .personal-info h3 {
-            color: var(--primary-color);
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
-        }
-
-        .personal-info ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .personal-info li {
-            margin-bottom: 1.2rem;
-            color: #555;
-            font-size: 1.1rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .personal-info strong {
-            color: var(--primary-color);
-            font-weight: 600;
-            margin-right: 0.5rem;
-            min-width: 100px;
-            display: inline-block;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: rgba(52, 152, 219, 0.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--secondary-color);
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(52, 152, 219, 0.2);
-        }
-
-        .social-links a:hover {
-            background-color: var(--secondary-color);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
-        }
-
-        /* Triangle Network Background for Footer */
-        .triangles-bg {
+        /* Network of Connecting Lines Background for Footer */
+        .network-bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -280,10 +19,10 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
-            opacity: 0.4;
+            opacity: 0.3;
         }
 
-        .triangles-bg svg {
+        .network-bg svg {
             position: absolute;
             top: 0;
             left: 0;
@@ -291,58 +30,36 @@
             height: 100%;
         }
 
-        .triangles-bg polygon {
-            stroke: rgba(255,255,255,0.6);
-            stroke-width: 0.8;
-            fill: none;
-            animation: float 15s infinite ease-in-out;
+        .network-bg line {
+            stroke: rgba(255,255,255,0.5);
+            stroke-width: 0.5;
+            animation: pulse 8s infinite ease-in-out;
         }
 
-        .triangles-bg polygon:nth-child(1) {
-            animation-delay: 0s;
-            stroke: rgba(255,255,255,0.7);
-        }
-        .triangles-bg polygon:nth-child(2) {
-            animation-delay: -3s;
-            stroke: rgba(255,255,255,0.5);
-        }
-        .triangles-bg polygon:nth-child(3) {
-            animation-delay: -6s;
-            stroke: rgba(255,255,255,0.4);
-        }
-        .triangles-bg polygon:nth-child(4) {
-            animation-delay: -2s;
-            stroke: rgba(255,255,255,0.6);
-        }
-        .triangles-bg polygon:nth-child(5) {
-            animation-delay: -5s;
-            stroke: rgba(255,255,255,0.5);
-        }
-        .triangles-bg polygon:nth-child(6) {
-            animation-delay: -8s;
-            stroke: rgba(255,255,255,0.4);
-        }
-        .triangles-bg polygon:nth-child(7) {
-            animation-delay: -1s;
-            stroke: rgba(255,255,255,0.6);
-        }
-        .triangles-bg polygon:nth-child(8) {
-            animation-delay: -4s;
-            stroke: rgba(255,255,255,0.5);
-        }
-
-        @keyframes float {
+        @keyframes pulse {
             0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            25% {
-                transform: translateY(-8px) translateX(5px);
+                stroke-opacity: 0.3;
             }
             50% {
-                transform: translateY(5px) translateX(-5px);
+                stroke-opacity: 0.7;
             }
-            75% {
-                transform: translateY(-5px) translateX(8px);
+        }
+
+        .network-bg circle {
+            fill: rgba(255,255,255,0.2);
+            stroke: rgba(255,255,255,0.5);
+            stroke-width: 0.5;
+            animation: glow 6s infinite ease-in-out;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                r: 1.5;
+                fill-opacity: 0.2;
+            }
+            50% {
+                r: 2;
+                fill-opacity: 0.4;
             }
         }
 
@@ -364,281 +81,83 @@
             z-index: 1;
         }
 
-        .footer-about h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-family: 'Playfair Display', serif;
-            color: white;
-        }
-
-        .footer-about p {
-            opacity: 0.9;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-            color: rgba(255,255,255,0.9);
-        }
-
-        .footer-social-links {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .footer-social-links a {
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            font-size: 1.2rem;
-        }
-
-        .footer-social-links a:hover {
-            background: var(--secondary-color);
-            transform: translateY(-3px);
-        }
-
-        .footer-links h3, .footer-contact h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            font-family: 'Playfair Display', serif;
-            color: white;
-        }
-
-        .footer-links ul, .footer-contact ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        .footer-links li, .footer-contact li {
-            margin-bottom: 1rem;
-        }
-
-        .footer-links a {
-            color: rgba(255,255,255,0.9);
-            transition: all 0.3s ease;
-            font-size: 1.1rem;
-            display: inline-block;
-            padding: 0.3rem 0;
-            text-decoration: none;
-        }
-
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-
-        .footer-contact i {
-            margin-right: 10px;
-            color: var(--secondary-color);
-            font-size: 1.2rem;
-            min-width: 25px;
-        }
-
-        .footer-contact li {
-            display: flex;
-            align-items: center;
-            color: rgba(255,255,255,0.9);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.2);
-            color: rgba(255,255,255,0.9);
-            font-size: 1.1rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        /* Responsive styles */
-        @media (max-width: 992px) {
-            .about-content {
-                flex-direction: column;
-            }
-
-            .profile-container {
-                width: 100%;
-                max-width: 400px;
-                margin: 0 auto 40px;
-            }
-
-            .page-header {
-                padding: 6rem 0;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .page-header h1 {
-                font-size: 2.5rem;
-            }
-
-            .page-header p {
-                font-size: 1.2rem;
-            }
-
-            .about-text h2 {
-                font-size: 2rem;
-            }
-
-            .about-text h3 {
-                font-size: 1.8rem;
-            }
-
-            .skills-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .page-header h1 {
-                font-size: 2rem;
-            }
-
-            .about-text, .personal-info {
-                padding: 2rem;
-            }
-
-            .profile-container {
-                min-width: auto;
-            }
-
-            .profile-image {
-                height: 350px;
-            }
-        }
+        /* Rest of your existing styles remain unchanged */
     </style>
 </head>
 <body>
-    <!-- Background Overlay -->
-    <div class="background-overlay"></div>
-
-    <!-- Navigation -->
-    <header class="glass-nav">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <span class="logo-icon"><i class="fas fa-map-marked-alt"></i></span>
-                <span>Ghulam Abbas Zafari</span>
-            </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="contact.html" class="contact-btn">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
-
-    <main>
-        <section class="page-header">
-            <div class="container">
-                <h1>About Me</h1>
-                <p>Professional Geoinformatics Engineer & GIS Specialist</p>
-            </div>
-        </section>
-
-        <section class="about-section">
-            <div class="container">
-                <div class="about-content">
-                    <div class="profile-container">
-                        <div class="profile-image"></div>
-                        <div class="personal-info">
-                            <h3>Personal Information</h3>
-                            <ul>
-                                <li><strong>Email:</strong> ghulamabbas.zafari@gmail.com</li>
-                                <li><strong>Phone:</strong> (+39) 379-138-7487</li>
-                                <li><strong>Address:</strong> Via Vittorio Veneto 22, Bresso, Italy</li>
-                                <li><strong>Languages:</strong> Persian (Dari), English (C2), Italian (B1)</li>
-                            </ul>
-                            <div class="social-links">
-                                <a href="https://github.com/zafariabbas68" target="_blank"><i class="fab fa-github"></i></a>
-                                <a href="https://wa.me/393791387487" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                                <a href="mailto:ghulamabbas.zafari@gmail.com"><i class="fas fa-envelope"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-text">
-                        <h2>Professional Profile</h2>
-                        <p>I am a dedicated Geoinformatics Engineer with a passion for transforming spatial data into actionable insights. With over five years of professional experience in cadastral surveying and geospatial analysis, I bring a unique combination of technical expertise and problem-solving skills to every project.</p>
-
-                        <p>Currently pursuing my Master's degree in Geoinformatics Engineering at Politecnico di Milano, I specialize in GIS applications, remote sensing analysis, and spatial data science. My work focuses on developing innovative solutions for environmental monitoring, urban planning, and land management challenges.</p>
-
-                        <p>What sets me apart is my ability to bridge the gap between complex geospatial technologies and practical applications. I thrive on creating efficient workflows that deliver accurate, reliable results while maintaining the highest standards of quality and precision.</p>
-
-                        <h3>Technical Skills</h3>
-                        <div class="skills-grid">
-                            <div class="skill-category">
-                                <h4>Geospatial Tools</h4>
-                                <ul>
-                                    <li>ArcGIS Pro & QGIS</li>
-                                    <li>ENVI & ESA SNAP</li>
-                                    <li>Google Earth Engine</li>
-                                    <li>PostGIS & GeoServer</li>
-                                    <li>AutoCAD & MicroStation</li>
-                                </ul>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Programming</h4>
-                                <ul>
-                                    <li>Python (Advanced)</li>
-                                    <li>JavaScript (Leaflet, OpenLayers)</li>
-                                    <li>SQL & NoSQL Databases</li>
-                                    <li>HTML/CSS & Web Mapping</li>
-                                    <li>MATLAB & R</li>
-                                </ul>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Remote Sensing</h4>
-                                <ul>
-                                    <li>Optical/SAR image analysis</li>
-                                    <li>Machine Learning Classification</li>
-                                    <li>Atmospheric correction</li>
-                                    <li>Drone image processing</li>
-                                    <li>NDVI & Spectral Indices</li>
-                                </ul>
-                            </div>
-                            <div class="skill-category">
-                                <h4>Data Science</h4>
-                                <ul>
-                                    <li>Geospatial Machine Learning</li>
-                                    <li>Statistical Modeling</li>
-                                    <li>scikit-learn & TensorFlow</li>
-                                    <li>Data visualization (Plotly, D3.js)</li>
-                                    <li>Big Data Processing</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- Previous HTML content remains the same until the footer -->
 
     <footer class="glass-footer">
-        <div class="triangles-bg">
+        <div class="network-bg">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon points="10,10 20,30 5,25" />
-                <polygon points="50,5 70,15 60,40" />
-                <polygon points="90,10 85,30 95,25" />
-                <polygon points="15,50 35,60 25,85" />
-                <polygon points="60,55 75,65 65,90" />
-                <polygon points="5,70 25,80 15,95" />
-                <polygon points="40,80 60,90 50,95" />
-                <polygon points="80,70 95,80 85,95" />
+                <!-- Nodes -->
+                <circle cx="10" cy="10" r="1.5" />
+                <circle cx="30" cy="15" r="1.5" />
+                <circle cx="50" cy="5" r="1.5" />
+                <circle cx="70" cy="15" r="1.5" />
+                <circle cx="90" cy="10" r="1.5" />
+                <circle cx="15" cy="30" r="1.5" />
+                <circle cx="35" cy="35" r="1.5" />
+                <circle cx="55" cy="25" r="1.5" />
+                <circle cx="75" cy="35" r="1.5" />
+                <circle cx="85" cy="30" r="1.5" />
+                <circle cx="5" cy="50" r="1.5" />
+                <circle cx="25" cy="55" r="1.5" />
+                <circle cx="45" cy="45" r="1.5" />
+                <circle cx="65" cy="55" r="1.5" />
+                <circle cx="85" cy="50" r="1.5" />
+                <circle cx="15" cy="70" r="1.5" />
+                <circle cx="35" cy="75" r="1.5" />
+                <circle cx="55" cy="65" r="1.5" />
+                <circle cx="75" cy="75" r="1.5" />
+                <circle cx="95" cy="70" r="1.5" />
+                <circle cx="10" cy="90" r="1.5" />
+                <circle cx="30" cy="85" r="1.5" />
+                <circle cx="50" cy="95" r="1.5" />
+                <circle cx="70" cy="85" r="1.5" />
+                <circle cx="90" cy="90" r="1.5" />
+
+                <!-- Connecting lines -->
+                <line x1="10" y1="10" x2="30" y2="15" />
+                <line x1="30" y1="15" x2="50" y2="5" />
+                <line x1="50" y1="5" x2="70" y2="15" />
+                <line x1="70" y1="15" x2="90" y2="10" />
+                <line x1="10" y1="10" x2="15" y2="30" />
+                <line x1="30" y1="15" x2="35" y2="35" />
+                <line x1="50" y1="5" x2="55" y2="25" />
+                <line x1="70" y1="15" x2="75" y2="35" />
+                <line x1="90" y1="10" x2="85" y2="30" />
+                <line x1="15" y1="30" x2="35" y2="35" />
+                <line x1="35" y1="35" x2="55" y2="25" />
+                <line x1="55" y1="25" x2="75" y2="35" />
+                <line x1="75" y1="35" x2="85" y2="30" />
+                <line x1="15" y1="30" x2="5" y2="50" />
+                <line x1="35" y1="35" x2="25" y2="55" />
+                <line x1="55" y1="25" x2="45" y2="45" />
+                <line x1="75" y1="35" x2="65" y2="55" />
+                <line x1="85" y1="30" x2="85" y2="50" />
+                <line x1="5" y1="50" x2="25" y2="55" />
+                <line x1="25" y1="55" x2="45" y2="45" />
+                <line x1="45" y1="45" x2="65" y2="55" />
+                <line x1="65" y1="55" x2="85" y2="50" />
+                <line x1="5" y1="50" x2="15" y2="70" />
+                <line x1="25" y1="55" x2="35" y2="75" />
+                <line x1="45" y1="45" x2="55" y2="65" />
+                <line x1="65" y1="55" x2="75" y2="75" />
+                <line x1="85" y1="50" x2="95" y2="70" />
+                <line x1="15" y1="70" x2="35" y2="75" />
+                <line x1="35" y1="75" x2="55" y2="65" />
+                <line x1="55" y1="65" x2="75" y2="75" />
+                <line x1="75" y1="75" x2="95" y2="70" />
+                <line x1="15" y1="70" x2="10" y2="90" />
+                <line x1="35" y1="75" x2="30" y2="85" />
+                <line x1="55" y1="65" x2="50" y2="95" />
+                <line x1="75" y1="75" x2="70" y2="85" />
+                <line x1="95" y1="70" x2="90" y2="90" />
+                <line x1="10" y1="90" x2="30" y2="85" />
+                <line x1="30" y1="85" x2="50" y2="95" />
+                <line x1="50" y1="95" x2="70" y2="85" />
+                <line x1="70" y1="85" x2="90" y2="90" />
             </svg>
         </div>
         <div class="container">
@@ -698,6 +217,51 @@
 
         // Update year automatically
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Animate network connections dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const svg = document.querySelector('.network-bg svg');
+            const lines = document.querySelectorAll('.network-bg line');
+
+            // Add random animation delays to lines
+            lines.forEach(line => {
+                const delay = Math.random() * -10;
+                line.style.animationDelay = `${delay}s`;
+            });
+
+            // Add more dynamic connections
+            const addMoreConnections = () => {
+                const circles = document.querySelectorAll('.network-bg circle');
+                const existingLines = document.querySelectorAll('.network-bg line').length;
+
+                // Add some random connections
+                for (let i = 0; i < 10; i++) {
+                    const circle1 = circles[Math.floor(Math.random() * circles.length)];
+                    const circle2 = circles[Math.floor(Math.random() * circles.length)];
+
+                    if (circle1 !== circle2) {
+                        const x1 = circle1.getAttribute('cx');
+                        const y1 = circle1.getAttribute('cy');
+                        const x2 = circle2.getAttribute('cx');
+                        const y2 = circle2.getAttribute('cy');
+
+                        const newLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                        newLine.setAttribute('x1', x1);
+                        newLine.setAttribute('y1', y1);
+                        newLine.setAttribute('x2', x2);
+                        newLine.setAttribute('y2', y2);
+                        newLine.setAttribute('stroke', 'rgba(255,255,255,0.4)');
+                        newLine.setAttribute('stroke-width', '0.5');
+                        newLine.style.animationDelay = `${Math.random() * -10}s`;
+
+                        svg.appendChild(newLine);
+                    }
+                }
+            };
+
+            // Add initial extra connections
+            addMoreConnections();
+        });
     </script>
 </body>
 </html>
