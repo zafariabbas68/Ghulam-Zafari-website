@@ -17,23 +17,27 @@
             --highlight-color: #f8d56b;
         }
 
-        /* Background and particles */
-        body {
-            position: relative;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            overflow-x: hidden;
-            font-family: 'Poppins', sans-serif;
-            color: var(--dark-color);
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .background-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255,255,255,0.7);
-            z-index: -2;
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
 
         /* Navigation */
@@ -44,13 +48,13 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 1rem 0;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -68,15 +72,60 @@
             font-size: 1.8rem;
         }
 
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .contact-btn {
+            background: var(--secondary-color);
+            color: white !important;
+            padding: 0.5rem 1.5rem !important;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
         /* Header Section */
         .page-header {
             position: relative;
             padding: 8rem 0;
-            overflow: hidden;
             background: linear-gradient(to right, rgba(44,62,80,0.9), rgba(52,152,219,0.8));
             color: white;
             margin-bottom: 4rem;
             text-align: center;
+            overflow: hidden;
         }
 
         .page-header h1 {
@@ -92,7 +141,6 @@
             font-size: 1.5rem;
             margin-bottom: 2.5rem;
             opacity: 0.95;
-            color: #ffffff;
             font-weight: 500;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
@@ -271,8 +319,8 @@
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
         }
 
-        /* Triangle Network Background for Footer */
-        .triangles-bg {
+        /* Network of Connecting Lines Background for Footer */
+        .network-bg {
             position: absolute;
             top: 0;
             left: 0;
@@ -280,10 +328,10 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
-            opacity: 0.4;
+            opacity: 0.3;
         }
 
-        .triangles-bg svg {
+        .network-bg svg {
             position: absolute;
             top: 0;
             left: 0;
@@ -291,58 +339,37 @@
             height: 100%;
         }
 
-        .triangles-bg polygon {
-            stroke: rgba(255,255,255,0.6);
-            stroke-width: 0.8;
-            fill: none;
-            animation: float 15s infinite ease-in-out;
+        .network-bg line {
+            stroke: rgba(255,255,255,0.5);
+            stroke-width: 0.5;
+            animation: pulse 8s infinite ease-in-out;
+            stroke-dasharray: 5, 5;
         }
 
-        .triangles-bg polygon:nth-child(1) {
-            animation-delay: 0s;
-            stroke: rgba(255,255,255,0.7);
-        }
-        .triangles-bg polygon:nth-child(2) {
-            animation-delay: -3s;
-            stroke: rgba(255,255,255,0.5);
-        }
-        .triangles-bg polygon:nth-child(3) {
-            animation-delay: -6s;
-            stroke: rgba(255,255,255,0.4);
-        }
-        .triangles-bg polygon:nth-child(4) {
-            animation-delay: -2s;
-            stroke: rgba(255,255,255,0.6);
-        }
-        .triangles-bg polygon:nth-child(5) {
-            animation-delay: -5s;
-            stroke: rgba(255,255,255,0.5);
-        }
-        .triangles-bg polygon:nth-child(6) {
-            animation-delay: -8s;
-            stroke: rgba(255,255,255,0.4);
-        }
-        .triangles-bg polygon:nth-child(7) {
-            animation-delay: -1s;
-            stroke: rgba(255,255,255,0.6);
-        }
-        .triangles-bg polygon:nth-child(8) {
-            animation-delay: -4s;
-            stroke: rgba(255,255,255,0.5);
-        }
-
-        @keyframes float {
+        @keyframes pulse {
             0%, 100% {
-                transform: translateY(0) translateX(0);
-            }
-            25% {
-                transform: translateY(-8px) translateX(5px);
+                stroke-opacity: 0.3;
             }
             50% {
-                transform: translateY(5px) translateX(-5px);
+                stroke-opacity: 0.7;
             }
-            75% {
-                transform: translateY(-5px) translateX(8px);
+        }
+
+        .network-bg circle {
+            fill: rgba(255,255,255,0.2);
+            stroke: rgba(255,255,255,0.5);
+            stroke-width: 0.5;
+            animation: glow 6s infinite ease-in-out;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                r: 1.5;
+                fill-opacity: 0.2;
+            }
+            50% {
+                r: 2;
+                fill-opacity: 0.4;
             }
         }
 
@@ -471,6 +498,38 @@
             .page-header {
                 padding: 6rem 0;
             }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                backdrop-filter: blur(10px);
+                z-index: 1000;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .nav-links li a {
+                font-size: 1.2rem;
+                padding: 10px 20px;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
         }
 
         @media (max-width: 768px) {
@@ -519,12 +578,9 @@
     </style>
 </head>
 <body>
-    <!-- Background Overlay -->
-    <div class="background-overlay"></div>
-
     <!-- Navigation -->
-    <header class="glass-nav">
-        <div class="container">
+    <nav class="glass-nav">
+        <div class="container nav-container">
             <a href="index.html" class="logo">
                 <span class="logo-icon"><i class="fas fa-map-marked-alt"></i></span>
                 <span>Ghulam Abbas Zafari</span>
@@ -541,7 +597,7 @@
                 <i class="fas fa-bars"></i>
             </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <section class="page-header">
@@ -629,16 +685,76 @@
     </main>
 
     <footer class="glass-footer">
-        <div class="triangles-bg">
+        <div class="network-bg">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none">
-                <polygon points="10,10 20,30 5,25" />
-                <polygon points="50,5 70,15 60,40" />
-                <polygon points="90,10 85,30 95,25" />
-                <polygon points="15,50 35,60 25,85" />
-                <polygon points="60,55 75,65 65,90" />
-                <polygon points="5,70 25,80 15,95" />
-                <polygon points="40,80 60,90 50,95" />
-                <polygon points="80,70 95,80 85,95" />
+                <!-- Nodes -->
+                <circle cx="10" cy="10" r="1.5" />
+                <circle cx="30" cy="15" r="1.5" />
+                <circle cx="50" cy="5" r="1.5" />
+                <circle cx="70" cy="15" r="1.5" />
+                <circle cx="90" cy="10" r="1.5" />
+                <circle cx="15" cy="30" r="1.5" />
+                <circle cx="35" cy="35" r="1.5" />
+                <circle cx="55" cy="25" r="1.5" />
+                <circle cx="75" cy="35" r="1.5" />
+                <circle cx="85" cy="30" r="1.5" />
+                <circle cx="5" cy="50" r="1.5" />
+                <circle cx="25" cy="55" r="1.5" />
+                <circle cx="45" cy="45" r="1.5" />
+                <circle cx="65" cy="55" r="1.5" />
+                <circle cx="85" cy="50" r="1.5" />
+                <circle cx="15" cy="70" r="1.5" />
+                <circle cx="35" cy="75" r="1.5" />
+                <circle cx="55" cy="65" r="1.5" />
+                <circle cx="75" cy="75" r="1.5" />
+                <circle cx="95" cy="70" r="1.5" />
+                <circle cx="10" cy="90" r="1.5" />
+                <circle cx="30" cy="85" r="1.5" />
+                <circle cx="50" cy="95" r="1.5" />
+                <circle cx="70" cy="85" r="1.5" />
+                <circle cx="90" cy="90" r="1.5" />
+
+                <!-- Connecting lines -->
+                <line x1="10" y1="10" x2="30" y2="15" />
+                <line x1="30" y1="15" x2="50" y2="5" />
+                <line x1="50" y1="5" x2="70" y2="15" />
+                <line x1="70" y1="15" x2="90" y2="10" />
+                <line x1="10" y1="10" x2="15" y2="30" />
+                <line x1="30" y1="15" x2="35" y2="35" />
+                <line x1="50" y1="5" x2="55" y2="25" />
+                <line x1="70" y1="15" x2="75" y2="35" />
+                <line x1="90" y1="10" x2="85" y2="30" />
+                <line x1="15" y1="30" x2="35" y2="35" />
+                <line x1="35" y1="35" x2="55" y2="25" />
+                <line x1="55" y1="25" x2="75" y2="35" />
+                <line x1="75" y1="35" x2="85" y2="30" />
+                <line x1="15" y1="30" x2="5" y2="50" />
+                <line x1="35" y1="35" x2="25" y2="55" />
+                <line x1="55" y1="25" x2="45" y2="45" />
+                <line x1="75" y1="35" x2="65" y2="55" />
+                <line x1="85" y1="30" x2="85" y2="50" />
+                <line x1="5" y1="50" x2="25" y2="55" />
+                <line x1="25" y1="55" x2="45" y2="45" />
+                <line x1="45" y1="45" x2="65" y2="55" />
+                <line x1="65" y1="55" x2="85" y2="50" />
+                <line x1="5" y1="50" x2="15" y2="70" />
+                <line x1="25" y1="55" x2="35" y2="75" />
+                <line x1="45" y1="45" x2="55" y2="65" />
+                <line x1="65" y1="55" x2="75" y2="75" />
+                <line x1="85" y1="50" x2="95" y2="70" />
+                <line x1="15" y1="70" x2="35" y2="75" />
+                <line x1="35" y1="75" x2="55" y2="65" />
+                <line x1="55" y1="65" x2="75" y2="75" />
+                <line x1="75" y1="75" x2="95" y2="70" />
+                <line x1="15" y1="70" x2="10" y2="90" />
+                <line x1="35" y1="75" x2="30" y2="85" />
+                <line x1="55" y1="65" x2="50" y2="95" />
+                <line x1="75" y1="75" x2="70" y2="85" />
+                <line x1="95" y1="70" x2="90" y2="90" />
+                <line x1="10" y1="90" x2="30" y2="85" />
+                <line x1="30" y1="85" x2="50" y2="95" />
+                <line x1="50" y1="95" x2="70" y2="85" />
+                <line x1="70" y1="85" x2="90" y2="90" />
             </svg>
         </div>
         <div class="container">
@@ -698,6 +814,68 @@
 
         // Update year automatically
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Enhanced network animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const svg = document.querySelector('.network-bg svg');
+            const lines = document.querySelectorAll('.network-bg line');
+            const circles = document.querySelectorAll('.network-bg circle');
+
+            // Add random animation delays
+            lines.forEach(line => {
+                line.style.animationDelay = `${Math.random() * -10}s`;
+                line.style.strokeDashoffset = Math.random() * 10;
+            });
+
+            circles.forEach(circle => {
+                circle.style.animationDelay = `${Math.random() * -6}s`;
+            });
+
+            // Create more dynamic connections
+            function connectRandomNodes() {
+                const nodeCount = circles.length;
+                const node1 = circles[Math.floor(Math.random() * nodeCount)];
+                const node2 = circles[Math.floor(Math.random() * nodeCount)];
+
+                if (node1 !== node2) {
+                    const x1 = node1.getAttribute('cx');
+                    const y1 = node1.getAttribute('cy');
+                    const x2 = node2.getAttribute('cx');
+                    const y2 = node2.getAttribute('cy');
+
+                    const newLine = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                    newLine.setAttribute('x1', x1);
+                    newLine.setAttribute('y1', y1);
+                    newLine.setAttribute('x2', x2);
+                    newLine.setAttribute('y2', y2);
+                    newLine.setAttribute('stroke', 'rgba(255,255,255,0.4)');
+                    newLine.setAttribute('stroke-width', '0.5');
+                    newLine.setAttribute('stroke-dasharray', '5,5');
+                    newLine.style.animationDelay = `${Math.random() * -10}s`;
+                    newLine.style.opacity = '0';
+
+                    svg.appendChild(newLine);
+
+                    // Fade in animation
+                    setTimeout(() => {
+                        newLine.style.transition = 'opacity 1.5s ease';
+                        newLine.style.opacity = '0.5';
+                    }, 100);
+                }
+            }
+
+            // Add initial extra connections
+            for (let i = 0; i < 15; i++) {
+                setTimeout(connectRandomNodes, i * 200);
+            }
+
+            // Periodically add more connections
+            setInterval(() => {
+                if (Math.random() > 0.7) {
+                    connectRandomNodes();
+                }
+            }, 3000);
+        });
     </script>
 </body>
 </html>
