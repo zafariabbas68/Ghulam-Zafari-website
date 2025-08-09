@@ -40,12 +40,13 @@
 
         /* Navigation */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(52, 152, 219, 0.95);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 1rem 0;
         }
 
         .container {
@@ -60,42 +61,45 @@
             align-items: center;
             font-weight: 600;
             font-size: 1.3rem;
-            color: var(--primary-color);
+            color: white;
             text-decoration: none;
         }
 
         .logo-icon {
             margin-right: 10px;
-            color: var(--secondary-color);
+            color: white;
             font-size: 1.8rem;
         }
 
-        /* Simplified Hero Section */
+        /* Hero Section with blue gradient */
         .hero {
             position: relative;
-            padding: 4rem 0 2rem;
+            padding: 6rem 0 4rem;
             overflow: hidden;
             color: white;
             margin-bottom: 4rem;
             text-align: center;
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.9) 0%, rgba(41, 128, 185, 0.9) 100%);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
 
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 1rem;
             line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
         .hero-subtitle {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
             opacity: 0.95;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-weight: 400;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         /* Skills Section with transparent background */
@@ -111,16 +115,28 @@
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: white;
+            font-size: 2.8rem;
+            color: var(--primary-color);
             margin-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.5);
+            background: linear-gradient(135deg, #3498db, #2c3e50);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            padding: 0 1rem;
         }
 
         .section-subtitle {
-            color: rgba(255,255,255,0.9);
+            color: var(--primary-color);
             font-size: 1.2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            font-weight: 500;
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.7);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            display: inline-block;
         }
 
         .skills-grid {
@@ -130,11 +146,12 @@
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 2rem;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         .skill-card:hover {
@@ -175,6 +192,7 @@
             border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 500;
+            border: 1px solid rgba(0,0,0,0.1);
         }
 
         /* Profile Image */
@@ -198,6 +216,58 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            font-weight: 600;
+        }
+
+        .nav-links a.active:after {
+            width: 100%;
+        }
+
+        /* Header container */
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         /* Triangle Network Background for Footer */
@@ -355,42 +425,48 @@
         /* Responsive styles */
         @media (max-width: 992px) {
             .hero-title {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1.2rem;
             }
             .image-wrapper {
                 width: 280px;
                 height: 280px;
             }
+            .section-title {
+                font-size: 2.4rem;
+            }
         }
 
         @media (max-width: 768px) {
             .hero {
-                padding: 3rem 0 1.5rem;
+                padding: 4rem 0 2rem;
             }
             .hero-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
             .skills-grid {
                 grid-template-columns: 1fr;
             }
             .section-title {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
         }
 
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1.1rem;
             }
             .image-wrapper {
                 width: 250px;
                 height: 250px;
             }
             .section-title {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
         }
 
@@ -399,7 +475,7 @@
             display: none;
             cursor: pointer;
             font-size: 1.5rem;
-            color: var(--primary-color);
+            color: white;
         }
 
         @media (max-width: 992px) {
@@ -409,7 +485,7 @@
                 left: -100%;
                 width: 100%;
                 height: calc(100vh - 70px);
-                background: rgba(255, 255, 255, 0.98);
+                background: rgba(52, 152, 219, 0.98);
                 flex-direction: column;
                 align-items: center;
                 padding: 40px 0;
@@ -439,7 +515,7 @@
 
     <!-- Navigation -->
     <header class="glass-nav">
-        <div class="container">
+        <div class="container header-container">
             <a href="index.html" class="logo">
                 <span class="logo-icon"><i class="fas fa-map-marked-alt"></i></span>
                 <span>Ghulam Abbas Zafari</span>
