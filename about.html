@@ -99,7 +99,7 @@
             text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
-        /* About Section - Modified to remove white background */
+        /* About Section - Modified for better readability */
         .about-section {
             padding: 5rem 0;
             background-color: transparent;
@@ -132,34 +132,34 @@
 
         .about-text {
             flex: 2;
-            background-color: transparent;
+            background-color: rgba(255, 255, 255, 0.85);
             padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             color: var(--dark-color);
         }
 
         .about-text h2 {
-            color: white;
+            color: var(--primary-color);
             font-family: 'Playfair Display', serif;
             font-size: 2.5rem;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+            border-bottom: 2px solid rgba(52, 152, 219, 0.3);
         }
 
         .about-text p {
             margin-bottom: 2rem;
-            color: white;
+            color: #555;
             font-size: 1.1rem;
             line-height: 1.8;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
 
         .about-text h3 {
-            color: white;
+            color: var(--primary-color);
             font-family: 'Playfair Display', serif;
             font-size: 2rem;
             margin: 3rem 0 2rem;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         .personal-info {
@@ -185,9 +185,251 @@
             border-left: 4px solid var(--secondary-color);
         }
 
-        /* Rest of your CSS remains the same */
-        /* ... (keep all other CSS rules as they were) ... */
+        /* Triangle Network Background for Footer */
+        .triangles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.4;
+        }
 
+        .triangles-bg svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .triangles-bg polygon {
+            stroke: rgba(255,255,255,0.6);
+            stroke-width: 0.8;
+            fill: none;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .triangles-bg polygon:nth-child(1) {
+            animation-delay: 0s;
+            stroke: rgba(255,255,255,0.7);
+        }
+        .triangles-bg polygon:nth-child(2) {
+            animation-delay: -3s;
+            stroke: rgba(255,255,255,0.5);
+        }
+        .triangles-bg polygon:nth-child(3) {
+            animation-delay: -6s;
+            stroke: rgba(255,255,255,0.4);
+        }
+        .triangles-bg polygon:nth-child(4) {
+            animation-delay: -2s;
+            stroke: rgba(255,255,255,0.6);
+        }
+        .triangles-bg polygon:nth-child(5) {
+            animation-delay: -5s;
+            stroke: rgba(255,255,255,0.5);
+        }
+        .triangles-bg polygon:nth-child(6) {
+            animation-delay: -8s;
+            stroke: rgba(255,255,255,0.4);
+        }
+        .triangles-bg polygon:nth-child(7) {
+            animation-delay: -1s;
+            stroke: rgba(255,255,255,0.6);
+        }
+        .triangles-bg polygon:nth-child(8) {
+            animation-delay: -4s;
+            stroke: rgba(255,255,255,0.5);
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-8px) translateX(5px);
+            }
+            50% {
+                transform: translateY(5px) translateX(-5px);
+            }
+            75% {
+                transform: translateY(-5px) translateX(8px);
+            }
+        }
+
+        /* Footer styles */
+        .glass-footer {
+            position: relative;
+            background: var(--primary-color);
+            color: white;
+            padding: 6rem 0 3rem;
+            overflow: hidden;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .footer-about h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        .footer-about p {
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            color: rgba(255,255,255,0.9);
+        }
+
+        .footer-social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .footer-social-links a {
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .footer-social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h3, .footer-contact h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        .footer-links ul, .footer-contact ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-links li, .footer-contact li {
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.9);
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            display: inline-block;
+            padding: 0.3rem 0;
+            text-decoration: none;
+        }
+
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .footer-contact i {
+            margin-right: 10px;
+            color: var(--secondary-color);
+            font-size: 1.2rem;
+            min-width: 25px;
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .profile-container {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto 40px;
+            }
+
+            .page-header {
+                padding: 5rem 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-header p {
+                font-size: 1.2rem;
+            }
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .page-header h1 {
+                font-size: 2rem;
+            }
+
+            .about-text, .personal-info {
+                padding: 2rem;
+            }
+
+            .profile-container {
+                min-width: auto;
+            }
+
+            .profile-image {
+                height: 350px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -301,6 +543,18 @@
     </main>
 
     <footer class="glass-footer">
+        <div class="triangles-bg">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon points="10,10 20,30 5,25" />
+                <polygon points="50,5 70,15 60,40" />
+                <polygon points="90,10 85,30 95,25" />
+                <polygon points="15,50 35,60 25,85" />
+                <polygon points="60,55 75,65 65,90" />
+                <polygon points="5,70 25,80 15,95" />
+                <polygon points="40,80 60,90 50,95" />
+                <polygon points="80,70 95,80 85,95" />
+            </svg>
+        </div>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
