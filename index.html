@@ -161,10 +161,25 @@
             font-weight: 700;
         }
 
-        /* Skills Section */
+        /* Skills Section - Highlighted */
         .skills-section {
             padding: 5rem 0;
             background-color: transparent;
+            position: relative;
+        }
+
+        .skills-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
+            border-radius: 15px;
+            margin: 2rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
         }
 
         .section-header {
@@ -190,6 +205,41 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
+        }
+
+        /* Highlighted GIS Skill Card */
+        .skill-card.gis-highlight {
+            position: relative;
+            border: 3px solid var(--accent-color);
+            transform: scale(1.02);
+            z-index: 1;
+            animation: pulse 2s infinite;
+        }
+
+        .skill-card.gis-highlight::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--accent-color);
+            border-radius: 15px;
+            z-index: -1;
+            opacity: 0.5;
+            animation: pulseBorder 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 0 rgba(230, 126, 34, 0.7); }
+            70% { box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 15px rgba(230, 126, 34, 0); }
+            100% { box-shadow: 0 10px 30px rgba(0,0,0,0.1), 0 0 0 0 rgba(230, 126, 34, 0); }
+        }
+
+        @keyframes pulseBorder {
+            0% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.05); opacity: 0.3; }
+            100% { transform: scale(1); opacity: 0.5; }
         }
 
         .skill-card {
@@ -441,6 +491,9 @@
                 display: block;
                 color: white;
             }
+            .skills-section::before {
+                margin: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -455,6 +508,13 @@
             }
             .section-title {
                 font-size: 2rem;
+            }
+            .skill-card.gis-highlight {
+                transform: none;
+                animation: none;
+            }
+            .skill-card.gis-highlight::before {
+                display: none;
             }
         }
 
@@ -471,6 +531,9 @@
             }
             .section-title {
                 font-size: 1.8rem;
+            }
+            .skills-section::before {
+                margin: 0.5rem;
             }
         }
 
@@ -530,12 +593,12 @@
                 <p class="section-subtitle">Areas of specialized knowledge and technical proficiency</p>
             </div>
             <div class="skills-grid">
-                <div class="skill-card">
+                <div class="skill-card gis-highlight">
                     <div class="skill-icon">
                         <i class="fas fa-map"></i>
                     </div>
                     <h3>Geographic Information Systems</h3>
-                    <p>Advanced spatial analysis, cartography, and WebGIS development using industry-standard tools.</p>
+                    <p><strong>Advanced spatial analysis, cartography, and WebGIS development using industry-standard tools.</strong></p>
                     <div class="skill-tags">
                         <span>ArcGIS</span>
                         <span>QGIS</span>
