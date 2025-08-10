@@ -24,15 +24,23 @@
             background-color: transparent;
         }
 
-        .satellite-background {
+       /* Background with satellite image */
+        body {
+            position: relative;
+            font-family: 'Poppins', sans-serif;
+            color: var(--dark-color);
+            overflow-x: hidden;
+        }
+
+        .background-image {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: url('assets/images/Satellite_imagery.png') center/cover no-repeat;
-            opacity: 0.15;
-            z-index: -1;
+            opacity: 0.15; /* Adjust transparency here */
+            z-index: -2;
         }
 
         /* Simplified Header */
