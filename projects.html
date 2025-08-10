@@ -17,13 +17,24 @@
             --highlight-color: #f8d56b;
         }
 
-        /* Background and particles */
+        /* Background with project image */
         body {
             position: relative;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            overflow-x: hidden;
             font-family: 'Poppins', sans-serif;
             color: var(--dark-color);
+            overflow-x: hidden;
+            background-color: transparent;
+        }
+
+        .project-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('/Users/ghulamabbaszafari/Downloads/Personal_Website_GAZ/assets/images/Background_project.png') center/cover no-repeat;
+            z-index: -1;
+            opacity: 0.8;
         }
 
         .background-overlay {
@@ -33,7 +44,7 @@
             width: 100%;
             height: 100%;
             background: rgba(255,255,255,0.7);
-            z-index: -2;
+            z-index: -1;
         }
 
         /* Navigation */
@@ -100,7 +111,10 @@
         /* Projects Section */
         .projects-section {
             padding: 5rem 0;
-            background-color: #f9fbfd;
+            background-color: rgba(249, 251, 253, 0.9);
+            border-radius: 15px;
+            margin: 2rem;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
         }
 
         .projects-filter {
@@ -544,6 +558,10 @@
             .page-header {
                 padding: 6rem 0;
             }
+
+            .projects-section {
+                margin: 1rem;
+            }
         }
 
         @media (max-width: 768px) {
@@ -593,11 +611,17 @@
             .project-visual {
                 height: 200px;
             }
+
+            .projects-section {
+                margin: 0.5rem;
+                padding: 3rem 0;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Background Overlay -->
+    <!-- Project Background Image -->
+    <div class="project-background"></div>
     <div class="background-overlay"></div>
 
     <!-- Navigation -->
