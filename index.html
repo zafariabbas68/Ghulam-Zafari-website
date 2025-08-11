@@ -38,7 +38,7 @@
             filter: brightness(1.1);
         }
 
-        /* Navigation */
+        /* Navigation - Reduced height */
         .glass-nav {
             background: var(--primary-color);
             backdrop-filter: blur(10px);
@@ -46,6 +46,7 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 0.5rem 0; /* Reduced padding */
         }
 
         .container {
@@ -53,6 +54,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -132,7 +136,7 @@
         /* Hero Section */
         .hero {
             position: relative;
-            padding: 6rem 0 4rem;
+            padding: 4rem 0 3rem; /* Reduced padding */
             color: white;
             margin-bottom: 4rem;
             text-align: center;
@@ -142,14 +146,14 @@
         .hero-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem; /* Slightly reduced size */
+            margin-bottom: 1.2rem; /* Reduced margin */
             line-height: 1.3;
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2.5rem;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
             opacity: 0.95;
             font-weight: 400;
             max-width: 700px;
@@ -174,11 +178,11 @@
             display: flex;
             justify-content: center;
             gap: 1rem;
-            margin-top: 2rem;
+            margin-top: 1.5rem; /* Reduced margin */
         }
 
         .btn {
-            padding: 0.8rem 2rem;
+            padding: 0.7rem 1.8rem; /* Slightly reduced padding */
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
@@ -213,13 +217,13 @@
         /* Profile Image */
         .hero-image {
             position: relative;
-            margin-top: 3rem;
+            margin-top: 2.5rem; /* Reduced margin */
         }
 
         .image-wrapper {
             position: relative;
-            width: 300px;
-            height: 300px;
+            width: 280px; /* Slightly reduced size */
+            height: 280px;
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
@@ -263,18 +267,18 @@
 
         /* Skills Section */
         .skills-section {
-            padding: 5rem 0;
+            padding: 4rem 0; /* Reduced padding */
             background-color: transparent;
         }
 
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2.5rem; /* Reduced margin */
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
+            font-size: 2.2rem; /* Slightly reduced size */
             color: white;
             margin-bottom: 1rem;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
@@ -282,7 +286,7 @@
 
         .section-subtitle {
             color: rgba(255,255,255,0.9);
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Slightly reduced size */
             max-width: 700px;
             margin: 0 auto;
             background-color: rgba(52, 152, 219, 0.8);
@@ -302,7 +306,7 @@
         .skill-card {
             background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            padding: 2rem;
+            padding: 1.8rem; /* Slightly reduced padding */
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             transition: all 0.3s ease;
         }
@@ -313,23 +317,23 @@
         }
 
         .skill-icon {
-            font-size: 2.5rem;
+            font-size: 2.3rem; /* Slightly reduced size */
             color: var(--secondary-color);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem; /* Reduced margin */
         }
 
         .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.4rem; /* Slightly reduced size */
+            margin-bottom: 0.8rem; /* Reduced margin */
             color: var(--primary-color);
             font-family: 'Playfair Display', serif;
         }
 
         .skill-card p {
             color: #555;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem; /* Reduced margin */
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Slightly reduced size */
         }
 
         .skill-tags {
@@ -394,7 +398,7 @@
             position: relative;
             background: var(--primary-color);
             color: white;
-            padding: 6rem 0 3rem;
+            padding: 5rem 0 3rem; /* Reduced padding */
             overflow: hidden;
         }
 
@@ -408,8 +412,8 @@
         }
 
         .footer-about h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.7rem; /* Slightly reduced size */
+            margin-bottom: 1.2rem; /* Reduced margin */
             font-family: 'Playfair Display', serif;
             color: white;
         }
@@ -417,7 +421,7 @@
         .footer-about p {
             opacity: 0.9;
             line-height: 1.6;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem; /* Reduced margin */
             color: rgba(255,255,255,0.9);
         }
 
@@ -445,8 +449,8 @@
         }
 
         .footer-links h3, .footer-contact h3 {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.7rem; /* Slightly reduced size */
+            margin-bottom: 1.2rem; /* Reduced margin */
             font-family: 'Playfair Display', serif;
             color: white;
         }
@@ -457,13 +461,13 @@
         }
 
         .footer-links li, .footer-contact li {
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem; /* Reduced margin */
         }
 
         .footer-links a {
             color: rgba(255,255,255,0.9);
             transition: all 0.3s ease;
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Slightly reduced size */
             display: inline-block;
             padding: 0.3rem 0;
             text-decoration: none;
@@ -485,16 +489,16 @@
             display: flex;
             align-items: center;
             color: rgba(255,255,255,0.9);
-            font-size: 1.1rem;
-            margin-bottom: 1.2rem;
+            font-size: 1.05rem; /* Slightly reduced size */
+            margin-bottom: 1rem; /* Reduced margin */
         }
 
         .footer-bottom {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem; /* Reduced padding */
             border-top: 1px solid rgba(255,255,255,0.2);
             color: rgba(255,255,255,0.9);
-            font-size: 1.1rem;
+            font-size: 1.05rem; /* Slightly reduced size */
             position: relative;
             z-index: 1;
         }
@@ -502,36 +506,37 @@
         /* Responsive styles */
         @media (max-width: 992px) {
             .hero-title {
-                font-size: 2.4rem;
+                font-size: 2.2rem;
             }
             .hero-subtitle {
-                font-size: 1.2rem;
+                font-size: 1.1rem;
             }
             .nav-links {
                 position: fixed;
-                top: 70px;
+                top: 60px; /* Reduced from 70px */
                 left: -100%;
                 width: 100%;
-                height: calc(100vh - 70px);
+                height: calc(100vh - 60px); /* Adjusted to match */
                 background: var(--primary-color);
                 flex-direction: column;
                 align-items: center;
-                padding: 40px 0;
+                padding: 30px 0; /* Reduced padding */
                 transition: all 0.5s ease;
             }
             .nav-links.active {
                 left: 0;
             }
             .nav-links li {
-                margin: 15px 0;
+                margin: 12px 0; /* Reduced margin */
             }
             .nav-links a {
-                font-size: 1.2rem;
-                padding: 10px 20px;
+                font-size: 1.1rem; /* Slightly reduced size */
+                padding: 8px 18px; /* Reduced padding */
             }
             .menu-toggle {
                 display: block;
                 color: white;
+                font-size: 1.4rem; /* Slightly reduced size */
             }
             .hero-buttons {
                 flex-direction: column;
@@ -545,35 +550,38 @@
 
         @media (max-width: 768px) {
             .hero {
-                padding: 4rem 0 2rem;
+                padding: 3rem 0 2rem; /* Reduced padding */
             }
             .hero-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .skills-grid {
                 grid-template-columns: 1fr;
             }
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             .section-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 576px) {
             .hero-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .hero-subtitle {
-                font-size: 1.1rem;
+                font-size: 1rem;
             }
             .image-wrapper {
-                width: 250px;
-                height: 250px;
+                width: 240px; /* Slightly reduced size */
+                height: 240px;
             }
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
+            }
+            .glass-nav {
+                padding: 0.4rem 0; /* Further reduced padding */
             }
         }
 
@@ -581,7 +589,7 @@
         .menu-toggle {
             display: none;
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 1.4rem; /* Slightly reduced size */
             color: white;
         }
     </style>
@@ -738,26 +746,41 @@
         </div>
     </footer>
 
-   <script>
-        // Mobile Menu Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const navLinks = document.getElementById('navLinks');
+    <script>
+        // Mobile Menu Toggle - Fixed to work properly
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuToggle.querySelector('i').classList.toggle('fa-times');
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        icon.classList.toggle('fa-times');
+                        icon.classList.toggle('fa-bars');
+                    }
+                });
+
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Update year automatically
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
         });
-
-        // Close menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuToggle.querySelector('i').classList.remove('fa-times');
-            });
-        });
-
-        // Update year automatically
-        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
