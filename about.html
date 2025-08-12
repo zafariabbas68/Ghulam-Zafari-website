@@ -433,7 +433,7 @@
     </style>
 </head>
 <body>
-    <!-- Satellite Imagery Background -->
+     <!-- Satellite Imagery Background -->
     <div class="satellite-background"></div>
 
     <!-- Navigation -->
@@ -443,25 +443,35 @@
                 <span class="logo-icon"><i class="fas fa-map-marked-alt"></i></span>
                 <span>Ghulam Abbas Zafari</span>
             </a>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="contact.html" class="contact-btn">Contact</a></li>
-            </ul>
             <div class="menu-toggle" id="menuToggle">
                 <i class="fas fa-bars"></i>
             </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" data-i18n="home">Home</a></li>
+                <li><a href="about.html" class="active" data-i18n="about">About</a></li>
+                <li><a href="projects.html" data-i18n="projects">Projects</a></li>
+                <li><a href="education.html" data-i18n="education">Education</a></li>
+                <li><a href="experience.html" data-i18n="experience">Experience</a></li>
+                <li class="language-selector">
+                    <div class="language-dropdown">
+                        <button class="language-btn"><i class="fas fa-globe"></i> <span class="current-language">EN</span></button>
+                        <ul class="language-options">
+                            <li data-lang="en">English</li>
+                            <li data-lang="it">Italiano</li>
+                            <li data-lang="fa">فارسی</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="contact-btn" data-i18n="contact">Contact</a></li>
+            </ul>
         </div>
     </header>
 
     <main>
         <section class="page-header">
             <div class="container">
-                <h1>About Me</h1>
-                <p>Professional Geoinformatics Engineer & GIS Specialist</p>
+                <h1 data-i18n="about_title">About Me</h1>
+                <p data-i18n="about_subtitle">Professional Geoinformatics Engineer & GIS Specialist</p>
             </div>
         </section>
 
@@ -471,12 +481,12 @@
                     <div class="profile-container">
                         <div class="profile-image"></div>
                         <div class="personal-info">
-                            <h3>Personal Information</h3>
+                            <h3 data-i18n="personal_info">Personal Information</h3>
                             <ul>
-                                <li><strong>Email:</strong> ghulamabbas.zafari@gmail.com</li>
-                                <li><strong>Phone:</strong> (+39) 379-138-7487</li>
-                                <li><strong>Address:</strong> Via Vittorio Veneto 22, Bresso, Italy</li>
-                                <li><strong>Languages:</strong> Persian (Dari), English (C2), Italian (B1)</li>
+                                <li><strong data-i18n="email">Email:</strong> ghulamabbas.zafari@gmail.com</li>
+                                <li><strong data-i18n="phone">Phone:</strong> (+39) 379-138-7487</li>
+                                <li><strong data-i18n="address">Address:</strong> Via Vittorio Veneto 22, Bresso, Italy</li>
+                                <li><strong data-i18n="languages">Languages:</strong> Persian (Dari), English (C2), Italian (B1)</li>
                             </ul>
                             <div class="social-links">
                                 <a href="https://github.com/zafariabbas68" target="_blank"><i class="fab fa-github"></i></a>
@@ -486,17 +496,17 @@
                         </div>
                     </div>
                     <div class="about-text">
-                        <h2>Professional Profile</h2>
-                        <p>I am a dedicated Geoinformatics Engineer with a passion for transforming spatial data into actionable insights. With over five years of professional experience in cadastral surveying and geospatial analysis, I bring a unique combination of technical expertise and problem-solving skills to every project.</p>
+                        <h2 data-i18n="profile_title">Professional Profile</h2>
+                        <p data-i18n="profile_text1">I am a dedicated Geoinformatics Engineer with a passion for transforming spatial data into actionable insights. With over five years of professional experience in cadastral surveying and geospatial analysis, I bring a unique combination of technical expertise and problem-solving skills to every project.</p>
 
-                        <p>Currently pursuing my Master's degree in Geoinformatics Engineering at Politecnico di Milano, I specialize in GIS applications, remote sensing analysis, and spatial data science. My work focuses on developing innovative solutions for environmental monitoring, urban planning, and land management challenges.</p>
+                        <p data-i18n="profile_text2">Currently pursuing my Master's degree in Geoinformatics Engineering at Politecnico di Milano, I specialize in GIS applications, remote sensing analysis, and spatial data science. My work focuses on developing innovative solutions for environmental monitoring, urban planning, and land management challenges.</p>
 
-                        <p>What sets me apart is my ability to bridge the gap between complex geospatial technologies and practical applications. I thrive on creating efficient workflows that deliver accurate, reliable results while maintaining the highest standards of quality and precision.</p>
+                        <p data-i18n="profile_text3">What sets me apart is my ability to bridge the gap between complex geospatial technologies and practical applications. I thrive on creating efficient workflows that deliver accurate, reliable results while maintaining the highest standards of quality and precision.</p>
 
-                        <h3>Technical Skills</h3>
+                        <h3 data-i18n="technical_skills">Technical Skills</h3>
                         <div class="skills-grid">
                             <div class="skill-category">
-                                <h4>Geospatial Tools</h4>
+                                <h4 data-i18n="geospatial_tools">Geospatial Tools</h4>
                                 <ul>
                                     <li>ArcGIS Pro & QGIS</li>
                                     <li>ENVI & ESA SNAP</li>
@@ -506,7 +516,7 @@
                                 </ul>
                             </div>
                             <div class="skill-category">
-                                <h4>Programming</h4>
+                                <h4 data-i18n="programming">Programming</h4>
                                 <ul>
                                     <li>Python (Advanced)</li>
                                     <li>JavaScript (Leaflet, OpenLayers)</li>
@@ -516,7 +526,7 @@
                                 </ul>
                             </div>
                             <div class="skill-category">
-                                <h4>Remote Sensing</h4>
+                                <h4 data-i18n="remote_sensing">Remote Sensing</h4>
                                 <ul>
                                     <li>Optical/SAR image analysis</li>
                                     <li>Machine Learning Classification</li>
@@ -526,7 +536,7 @@
                                 </ul>
                             </div>
                             <div class="skill-category">
-                                <h4>Data Science</h4>
+                                <h4 data-i18n="data_science">Data Science</h4>
                                 <ul>
                                     <li>Geospatial Machine Learning</li>
                                     <li>Statistical Modeling</li>
@@ -559,7 +569,7 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>Ghulam Abbas Zafari</h3>
-                    <p>Innovative geospatial solutions for complex environmental and urban challenges.</p>
+                    <p data-i18n="footer_about">Innovative geospatial solutions for complex environmental and urban challenges.</p>
                     <div class="footer-social-links">
                         <a href="https://github.com/zafariabbas68" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://wa.me/393791387487" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -567,18 +577,18 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <h3>Quick Links</h3>
+                    <h3 data-i18n="quick_links">Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="experience.html">Experience</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="home">Home</a></li>
+                        <li><a href="about.html" data-i18n="about">About</a></li>
+                        <li><a href="projects.html" data-i18n="projects">Projects</a></li>
+                        <li><a href="education.html" data-i18n="education">Education</a></li>
+                        <li><a href="experience.html" data-i18n="experience">Experience</a></li>
+                        <li><a href="contact.html" data-i18n="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
-                    <h3>Contact Info</h3>
+                    <h3 data-i18n="contact_info">Contact Info</h3>
                     <ul>
                         <li><i class="fas fa-envelope"></i> ghulamabbas.zafari@gmail.com</li>
                         <li><i class="fas fa-phone"></i> (+39) 379-138-7487</li>
@@ -593,6 +603,102 @@
     </footer>
 
     <script>
+        // Mobile Menu Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function() {
+                    navLinks.classList.toggle('active');
+                    const icon = menuToggle.querySelector('i');
+                    if (icon) {
+                        if (navLinks.classList.contains('active')) {
+                            icon.classList.remove('fa-bars');
+                            icon.classList.add('fa-times');
+                        } else {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    }
+                });
+
+                // Close menu when clicking on a link
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        const icon = menuToggle.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Update year automatically
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // Language Switching Functionality
+            const languageBtn = document.querySelector('.language-btn');
+            const currentLanguage = document.querySelector('.current-language');
+            const languageOptions = document.querySelectorAll('.language-options li');
+
+            // Set initial language from localStorage or browser language
+            const defaultLanguage = localStorage.getItem('language') ||
+                                (navigator.language.startsWith('it') ? 'it' :
+                                (navigator.language.startsWith('fa') ? 'fa' : 'en'));
+
+            // Load translations
+            function loadLanguage(lang) {
+                fetch(`assets/lang/${lang}.json`)
+                    .then(response => response.json())
+                    .then(translations => {
+                        // Update all translatable elements
+                        document.querySelectorAll('[data-i18n]').forEach(element => {
+                            const key = element.getAttribute('data-i18n');
+                            if (translations[key]) {
+                                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                                    element.value = translations[key];
+                                } else {
+                                    element.innerHTML = translations[key];
+                                }
+                            }
+                        });
+
+                        // Set RTL for Persian
+                        if (lang === 'fa') {
+                            document.documentElement.dir = 'rtl';
+                            document.documentElement.lang = 'fa';
+                        } else {
+                            document.documentElement.dir = 'ltr';
+                            document.documentElement.lang = lang;
+                        }
+
+                        // Update current language display
+                        currentLanguage.textContent = lang.toUpperCase();
+                        localStorage.setItem('language', lang);
+                    })
+                    .catch(error => console.error('Error loading language file:', error));
+            }
+
+            // Set initial language
+            loadLanguage(defaultLanguage);
+
+            // Language selector event listeners
+            languageOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const lang = option.getAttribute('data-lang');
+                    loadLanguage(lang);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
