@@ -958,26 +958,3 @@ a {
 [dir="rtl"] .footer-links a:hover {
     transform: translateX(-5px);
 }
-
-/* RTL Support */
-[dir="rtl"] {
-    direction: rtl;
-    text-align: right;
-}
-
-[dir="rtl"] .hero-buttons,
-[dir="rtl"] .skills-grid,
-[dir="rtl"] .footer-content,
-[dir="rtl"] .about-content {
-    direction: rtl;
-}
-
-[dir="rtl"] .footer-links a:hover,
-[dir="rtl"] .nav-links a:hover {
-    transform: translateX(-5px);
-}
-
-[dir="rtl"] .skill-category {
-    border-left: none;
-    border-right: 4px solid var(--secondary-color);
-}
