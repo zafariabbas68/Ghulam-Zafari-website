@@ -890,6 +890,8 @@ a {
 .color-box.agriculture { background: #fec44f;
 
 }
+
+
 /* Language Selector Styles */
 .language-selector {
     position: relative;
@@ -944,4 +946,18 @@ a {
     background: #f1f5f9;
 }
 
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
 
+[dir="rtl"] .hero-buttons,
+[dir="rtl"] .skills-grid,
+[dir="rtl"] .footer-content {
+    direction: rtl;
+}
+
+[dir="rtl"] .footer-links a:hover {
+    transform: translateX(-5px);
+}
