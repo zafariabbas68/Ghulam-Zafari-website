@@ -287,169 +287,90 @@
             color: var(--accent-color);
         }
 
-        /* Enhanced Skills Section */
+        /* Skills Section */
         .skills-section {
-            padding: 6rem 0;
-            background-color: rgba(44, 62, 80, 0.85);
-            backdrop-filter: blur(5px);
-            margin: 4rem 0;
-            border-radius: 20px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .skills-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('assets/images/grid-pattern.png') center/cover;
-            opacity: 0.05;
-            z-index: 0;
+            padding: 5rem 0;
+            background-color: transparent;
         }
 
         .section-header {
-            margin-bottom: 4rem;
-            position: relative;
             text-align: center;
+            margin-bottom: 3rem;
         }
 
         .section-title {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8rem;
-            margin-bottom: 1.5rem;
-            position: relative;
-            display: inline-block;
+            font-size: 2.5rem;
             color: white;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--secondary-color);
-            border-radius: 2px;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
         }
 
         .section-subtitle {
-            font-size: 1.3rem;
-            max-width: 800px;
-            line-height: 1.6;
             color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto;
+            background-color: rgba(52, 152, 219, 0.8);
+            padding: 10px 20px;
+            border-radius: 50px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: inline-block;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .skill-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.9);
             border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        .skill-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 5px;
-            background: var(--secondary-color);
-            transition: all 0.4s ease;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
         }
 
         .skill-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 50px rgba(0,0,0,0.2);
-        }
-
-        .skill-card:hover::before {
-            height: 10px;
-            background: var(--accent-color);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.15);
         }
 
         .skill-icon {
-            font-size: 3rem;
+            font-size: 2.5rem;
             color: var(--secondary-color);
-            margin-bottom: 2rem;
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover .skill-icon {
-            transform: scale(1.1);
-            color: var(--accent-color);
+            margin-bottom: 1.5rem;
         }
 
         .skill-card h3 {
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
             color: var(--primary-color);
-            position: relative;
-            padding-bottom: 1rem;
             font-family: 'Playfair Display', serif;
-        }
-
-        .skill-card h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--secondary-color);
-            transition: all 0.3s ease;
-        }
-
-        .skill-card:hover h3::after {
-            width: 80px;
-            background: var(--accent-color);
         }
 
         .skill-card p {
             color: #555;
-            margin-bottom: 2rem;
-            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
             font-size: 1.1rem;
         }
 
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 0.5rem;
         }
 
         .skill-tags span {
             background: #f1f5f9;
             color: var(--primary-color);
-            padding: 0.5rem 1rem;
+            padding: 0.3rem 0.8rem;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .skill-tags span:hover {
-            background: var(--secondary-color);
-            color: white;
-            transform: translateY(-2px);
+            font-size: 0.8rem;
+            font-weight: 500;
         }
 
         /* Triangle Network Background for Footer */
@@ -655,9 +576,6 @@
                 margin-left: 0;
                 margin-top: 1rem;
             }
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
         }
 
         @media (max-width: 768px) {
@@ -667,8 +585,11 @@
             .hero-title {
                 font-size: 2rem;
             }
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
             .section-title {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .section-subtitle {
                 font-size: 1.1rem;
@@ -681,9 +602,6 @@
             }
             .logo-icon {
                 font-size: 1.6rem;
-            }
-            .skills-section {
-                padding: 4rem 0;
             }
         }
 
@@ -704,15 +622,6 @@
             .nav-links {
                 top: 60px;
                 height: calc(100vh - 60px);
-            }
-            .skill-card {
-                padding: 2rem;
-            }
-            .skill-icon {
-                font-size: 2.5rem;
-            }
-            .skill-card h3 {
-                font-size: 1.4rem;
             }
         }
     </style>
@@ -767,7 +676,7 @@
         </div>
     </section>
 
-    <!-- Enhanced Skills Section -->
+    <!-- Skills Section -->
     <section class="skills-section">
         <div class="container">
             <div class="section-header">
@@ -775,71 +684,43 @@
                 <p class="section-subtitle">Areas of specialized knowledge and technical proficiency</p>
             </div>
             <div class="skills-grid">
-                <!-- Geographic Information Systems Card -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-map"></i>
                     </div>
                     <h3>Geographic Information Systems</h3>
-                    <p>Advanced spatial analysis, cartography, and WebGIS development using industry-standard tools with expertise in both proprietary and open-source platforms.</p>
+                    <p>Advanced spatial analysis, cartography, and WebGIS development using industry-standard tools.</p>
                     <div class="skill-tags">
-                        <span>ArcGIS Pro</span>
+                        <span>ArcGIS</span>
                         <span>QGIS</span>
                         <span>PostGIS</span>
                         <span>GeoServer</span>
-                        <span>Leaflet</span>
-                        <span>OpenLayers</span>
                     </div>
                 </div>
-
-                <!-- Remote Sensing Card -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-satellite-dish"></i>
                     </div>
                     <h3>Remote Sensing</h3>
-                    <p>Comprehensive image processing, classification, and environmental monitoring using optical, thermal, and SAR data from various platforms.</p>
+                    <p>Image processing, classification, and environmental monitoring using optical and SAR data.</p>
                     <div class="skill-tags">
                         <span>ENVI</span>
                         <span>Google Earth Engine</span>
                         <span>ESA SNAP</span>
-                        <span>ERDAS Imagine</span>
-                        <span>Drone2Map</span>
-                        <span>PCI Geomatica</span>
+                        <span>Drone Imagery</span>
                     </div>
                 </div>
-
-                <!-- Geospatial Development Card -->
                 <div class="skill-card">
                     <div class="skill-icon">
                         <i class="fas fa-code"></i>
                     </div>
                     <h3>Geospatial Development</h3>
-                    <p>Building custom geospatial applications, automated data processing pipelines, and spatial analysis tools for diverse applications.</p>
+                    <p>Building custom geospatial applications and data processing pipelines.</p>
                     <div class="skill-tags">
                         <span>Python</span>
                         <span>JavaScript</span>
                         <span>PostgreSQL</span>
                         <span>GeoDjango</span>
-                        <span>ArcPy</span>
-                        <span>GDAL/OGR</span>
-                    </div>
-                </div>
-
-                <!-- Geospatial Data Management Card -->
-                <div class="skill-card">
-                    <div class="skill-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </div>
-                    <h3>Geospatial Data Management</h3>
-                    <p>Designing and implementing efficient geospatial database architectures and data workflows for optimal performance.</p>
-                    <div class="skill-tags">
-                        <span>ArcGIS Enterprise</span>
-                        <span>Geodatabases</span>
-                        <span>FME</span>
-                        <span>ETL Processes</span>
-                        <span>Big Data</span>
-                        <span>Cloud Solutions</span>
                     </div>
                 </div>
             </div>
