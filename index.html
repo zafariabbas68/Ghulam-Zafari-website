@@ -141,6 +141,76 @@
             box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
         }
 
+        /* Language Selector Styles */
+        .language-selector {
+            position: relative;
+            margin-left: 1rem;
+        }
+
+        .language-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 1.05rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 0.5rem 0;
+        }
+
+        .language-options {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            list-style: none;
+            padding: 0.5rem 0;
+            margin: 0;
+            width: 120px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .language-dropdown:hover .language-options {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .language-options li {
+            padding: 0.5rem 1rem;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .language-options li:hover {
+            background: #f1f5f9;
+        }
+
+        /* RTL Support */
+        [dir="rtl"] {
+            direction: rtl;
+            text-align: right;
+        }
+
+        [dir="rtl"] .hero-buttons,
+        [dir="rtl"] .skills-grid,
+        [dir="rtl"] .footer-content {
+            direction: rtl;
+        }
+
+        [dir="rtl"] .footer-links a:hover {
+            transform: translateX(-5px);
+        }
+
         /* Mobile Menu Toggle */
         .menu-toggle {
             display: none;
@@ -595,6 +665,12 @@
             .skills-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            /* Mobile language selector */
+            .language-options {
+                right: auto;
+                left: 0;
+            }
         }
 
         @media (max-width: 576px) {
@@ -617,6 +693,37 @@
             .profile-image {
                 height: 350px;
             }
+
+            /* Mobile menu adjustments */
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(44, 62, 80, 0.98);
+                flex-direction: column;
+                align-items: center;
+                padding: 1rem 0;
+                clip-path: circle(0px at 90% -10%);
+                transition: all 0.5s ease-out;
+            }
+
+            .nav-links.active {
+                clip-path: circle(1000px at 90% -10%);
+            }
+
+            .nav-links li {
+                margin: 1rem 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .language-selector {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
         }
     </style>
 </head>
@@ -635,12 +742,22 @@
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-links" id="navLinks">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="education.html">Education</a></li>
-                <li><a href="experience.html">Experience</a></li>
-                <li><a href="contact.html" class="contact-btn">Contact</a></li>
+                <li><a href="index.html" class="active" data-i18n="home">Home</a></li>
+                <li><a href="about.html" data-i18n="about">About</a></li>
+                <li><a href="projects.html" data-i18n="projects">Projects</a></li>
+                <li><a href="education.html" data-i18n="education">Education</a></li>
+                <li><a href="experience.html" data-i18n="experience">Experience</a></li>
+                <li class="language-selector">
+                    <div class="language-dropdown">
+                        <button class="language-btn"><i class="fas fa-globe"></i> <span class="current-language">EN</span></button>
+                        <ul class="language-options">
+                            <li data-lang="en">English</li>
+                            <li data-lang="it">Italiano</li>
+                            <li data-lang="fa">فارسی</li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="contact.html" class="contact-btn" data-i18n="contact">Contact</a></li>
             </ul>
         </div>
     </header>
@@ -731,12 +848,12 @@
                 <div class="footer-links">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="education.html">Education</a></li>
-                        <li><a href="experience.html">Experience</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="index.html" data-i18n="home">Home</a></li>
+                        <li><a href="about.html" data-i18n="about">About</a></li>
+                        <li><a href="projects.html" data-i18n="projects">Projects</a></li>
+                        <li><a href="education.html" data-i18n="education">Education</a></li>
+                        <li><a href="experience.html" data-i18n="experience">Experience</a></li>
+                        <li><a href="contact.html" data-i18n="contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-contact">
@@ -793,6 +910,84 @@
             if (yearElement) {
                 yearElement.textContent = new Date().getFullYear();
             }
+
+            // Language Switching Functionality
+            const languageBtn = document.querySelector('.language-btn');
+            const currentLanguage = document.querySelector('.current-language');
+            const languageOptions = document.querySelectorAll('.language-options li');
+
+            // Set initial language from localStorage or browser language
+            const defaultLanguage = localStorage.getItem('language') ||
+                                (navigator.language.startsWith('it') ? 'it' :
+                                (navigator.language.startsWith('fa') ? 'fa' : 'en'));
+
+            // Load translations
+            function loadLanguage(lang) {
+                fetch(`assets/lang/${lang}.json`)
+                    .then(response => response.json())
+                    .then(translations => {
+                        // Update all translatable elements
+                        document.querySelectorAll('[data-i18n]').forEach(element => {
+                            const key = element.getAttribute('data-i18n');
+                            if (translations[key]) {
+                                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                                    element.value = translations[key];
+                                } else {
+                                    element.innerHTML = translations[key];
+                                }
+                            }
+                        });
+
+                        // Update hero section
+                        document.querySelector('.hero-title').innerHTML = translations.hero_title;
+                        document.querySelector('.hero-subtitle').textContent = translations.hero_subtitle;
+                        document.querySelector('.primary-btn').innerHTML = translations.view_work;
+                        document.querySelector('.secondary-btn').textContent = translations.get_in_touch;
+
+                        // Update skills section
+                        document.querySelector('.section-title').textContent = translations.core_expertise;
+                        document.querySelector('.section-subtitle').textContent = translations.expertise_subtitle;
+
+                        // Update skill cards
+                        const skillCards = document.querySelectorAll('.skill-card');
+                        skillCards[0].querySelector('h3').textContent = translations.gis;
+                        skillCards[0].querySelector('p').textContent = translations.gis_desc;
+                        skillCards[1].querySelector('h3').textContent = translations.remote_sensing;
+                        skillCards[1].querySelector('p').textContent = translations.rs_desc;
+                        skillCards[2].querySelector('h3').textContent = translations.geospatial_dev;
+                        skillCards[2].querySelector('p').textContent = translations.dev_desc;
+
+                        // Update footer
+                        document.querySelector('.footer-about p').textContent = translations.footer_about;
+                        document.querySelector('.footer-links h3').textContent = translations.quick_links;
+                        document.querySelector('.footer-contact h3').textContent = translations.contact_info;
+
+                        // Set RTL for Persian
+                        if (lang === 'fa') {
+                            document.documentElement.dir = 'rtl';
+                            document.documentElement.lang = 'fa';
+                        } else {
+                            document.documentElement.dir = 'ltr';
+                            document.documentElement.lang = lang;
+                        }
+
+                        // Update current language display
+                        currentLanguage.textContent = lang.toUpperCase();
+                        localStorage.setItem('language', lang);
+                    })
+                    .catch(error => console.error('Error loading language file:', error));
+            }
+
+            // Set initial language
+            loadLanguage(defaultLanguage);
+
+            // Language selector event listeners
+            languageOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const lang = option.getAttribute('data-lang');
+                    loadLanguage(lang);
+                });
+            });
         });
     </script>
 </body>

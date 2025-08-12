@@ -1,0 +1,23 @@
+{
+    "home": "Home",
+    "about": "Chi Sono",
+    "projects": "Progetti",
+    "education": "Formazione",
+    "experience": "Esperienza",
+    "contact": "Contatti",
+    "hero_title": "Trasformare dati spaziali<br>In <span class=\"highlight\">informazioni utili</span>",
+    "hero_subtitle": "Ingegnere in Geoinformatica | Specialista GIS | Esperto in Telerilevamento",
+    "view_work": "Vedi i miei lavori <i class=\"fas fa-arrow-right\"></i>",
+    "get_in_touch": "Contattami",
+    "core_expertise": "Competenze Principali",
+    "expertise_subtitle": "Aree di conoscenza specializzata e competenza tecnica",
+    "gis": "Sistemi Informativi Geografici",
+    "gis_desc": "Analisi spaziale avanzata, cartografia e sviluppo WebGIS utilizzando strumenti standard del settore.",
+    "remote_sensing": "Telerilevamento",
+    "rs_desc": "Elaborazione di immagini, classificazione e monitoraggio ambientale utilizzando dati ottici e SAR.",
+    "geospatial_dev": "Sviluppo Geospaziale",
+    "dev_desc": "Creazione di applicazioni geospaziali personalizzate e pipeline di elaborazione dati.",
+    "footer_about": "Soluzioni geospaziali innovative per sfide ambientali e urbane complesse.",
+    "quick_links": "Link Veloci",
+    "contact_info": "Informazioni di Contatto"
+}

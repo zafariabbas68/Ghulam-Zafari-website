@@ -888,3 +888,73 @@ a {
 .color-box.urban { background: #e31a1c; }
 .color-box.water { background: #4292c6; }
 .color-box.agriculture { background: #fec44f; }
+
+/* Language Selector Styles */
+.language-selector {
+    position: relative;
+    margin-left: 1rem;
+}
+
+.language-btn {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0.5rem 0;
+}
+
+.language-options {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.language-dropdown:hover .language-options {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.language-options li {
+    padding: 0.5rem 1rem;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.language-options li:hover {
+    background: #f1f5f9;
+}
+
+/* RTL Support */
+[dir="rtl"] {
+    direction: rtl;
+    text-align: right;
+}
+
+[dir="rtl"] .hero-buttons,
+[dir="rtl"] .skills-grid,
+[dir="rtl"] .footer-content {
+    direction: rtl;
+}
+
+[dir="rtl"] .footer-links a:hover {
+    transform: translateX(-5px);
+}
