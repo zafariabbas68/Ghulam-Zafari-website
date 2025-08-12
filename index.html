@@ -400,6 +400,39 @@
             animation: float 15s infinite ease-in-out;
         }
 
+        .triangles-bg polygon:nth-child(1) {
+            animation-delay: 0s;
+            stroke: rgba(255,255,255,0.7);
+        }
+        .triangles-bg polygon:nth-child(2) {
+            animation-delay: -3s;
+            stroke: rgba(255,255,255,0.5);
+        }
+        .triangles-bg polygon:nth-child(3) {
+            animation-delay: -6s;
+            stroke: rgba(255,255,255,0.4);
+        }
+        .triangles-bg polygon:nth-child(4) {
+            animation-delay: -2s;
+            stroke: rgba(255,255,255,0.6);
+        }
+        .triangles-bg polygon:nth-child(5) {
+            animation-delay: -5s;
+            stroke: rgba(255,255,255,0.5);
+        }
+        .triangles-bg polygon:nth-child(6) {
+            animation-delay: -8s;
+            stroke: rgba(255,255,255,0.4);
+        }
+        .triangles-bg polygon:nth-child(7) {
+            animation-delay: -1s;
+            stroke: rgba(255,255,255,0.6);
+        }
+        .triangles-bg polygon:nth-child(8) {
+            animation-delay: -4s;
+            stroke: rgba(255,255,255,0.5);
+        }
+
         @keyframes float {
             0%, 100% {
                 transform: translateY(0) translateX(0);
@@ -527,101 +560,62 @@
 
         /* Responsive styles */
         @media (max-width: 992px) {
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--primary-color);
+            .about-content {
                 flex-direction: column;
-                align-items: center;
-                padding: 2rem 0;
-                transition: all 0.5s ease;
-                z-index: 999;
             }
-            .nav-links.active {
-                left: 0;
-            }
-            .nav-links li {
-                margin: 1rem 0;
+
+            .profile-container {
                 width: 100%;
-                text-align: center;
+                max-width: 400px;
+                margin: 0 auto 40px;
             }
-            .nav-links a {
-                font-size: 1.2rem;
-                padding: 0.8rem 1.5rem;
-                display: block;
-            }
-            .menu-toggle {
-                display: block;
-            }
-            .contact-btn {
-                margin-top: 1rem;
-                background: var(--accent-color);
-                color: white;
-                display: inline-block;
-            }
-            .hero-title {
-                font-size: 2.4rem;
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-            .secondary-btn {
-                margin-left: 0;
-                margin-top: 1rem;
+
+            .page-header {
+                padding: 5rem 0;
             }
         }
 
         @media (max-width: 768px) {
-            .hero {
-                padding: 4rem 0 2rem;
+            .page-header h1 {
+                font-size: 2.5rem;
             }
-            .hero-title {
-                font-size: 2rem;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .section-subtitle {
-                font-size: 1.1rem;
-            }
-            .glass-nav {
-                padding: 0.6rem 0;
-            }
-            .logo {
+
+            .page-header p {
                 font-size: 1.2rem;
             }
-            .logo-icon {
-                font-size: 1.6rem;
+
+            .about-text h2 {
+                font-size: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.8rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr 1fr;
             }
         }
 
         @media (max-width: 576px) {
-            .hero-title {
-                font-size: 1.8rem;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
-            .hero-subtitle {
-                font-size: 1.1rem;
+
+            .page-header h1 {
+                font-size: 2rem;
             }
-            .image-wrapper {
-                width: 250px;
-                height: 250px;
+
+            .about-text, .personal-info {
+                padding: 2rem;
             }
-            .section-title {
-                font-size: 1.8rem;
+
+            .profile-container {
+                min-width: auto;
             }
-            .nav-links {
-                top: 60px;
-                height: calc(100vh - 60px);
+
+            .profile-image {
+                height: 350px;
             }
         }
     </style>
