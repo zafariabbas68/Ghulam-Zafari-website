@@ -32,24 +32,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255,255,255,0.85);
+            background: rgba(255,255,255,0.7);
             z-index: -2;
         }
 
         /* Navigation */
         .glass-nav {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 1rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .glass-nav.scrolled {
-            box-shadow: 0 5px 30px rgba(0,0,0,0.15);
         }
 
         .container {
@@ -66,11 +60,6 @@
             font-size: 1.3rem;
             color: var(--primary-color);
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo:hover {
-            transform: translateX(5px);
         }
 
         .logo-icon {
@@ -79,55 +68,43 @@
             font-size: 1.8rem;
         }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            position: relative;
-            padding: 0.5rem 0;
-            transition: all 0.3s ease;
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background-color: var(--secondary-color);
-            transition: width 0.3s ease;
-        }
-
-        .nav-links a:hover::after,
-        .nav-links a.active::after {
-            width: 100%;
-        }
-
-        .nav-links a.active {
-            color: var(--secondary-color);
-            font-weight: 600;
-        }
-
         /* Header Section */
         .page-header {
             position: relative;
-            padding: 10rem 0;
+            padding: 8rem 0;
             overflow: hidden;
-            background: linear-gradient(135deg, rgba(44,62,80,0.9) 0%, rgba(52,152,219,0.85) 100%);
+            background: linear-gradient(to right, rgba(44,62,80,0.9), rgba(52,152,219,0.8));
             color: white;
             margin-bottom: 4rem;
             text-align: center;
-            background-attachment: fixed;
         }
 
-        .page-header::before {
+        .page-header h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .page-header p {
+            font-size: 1.5rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+            color: #ffffff;
+            font-weight: 500;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Education Section */
+        .education-section {
+            padding: 5rem 0;
+            background-color: #f9fbfd;
+            position: relative;
+        }
+
+        .education-section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -138,37 +115,6 @@
             background-size: cover;
             opacity: 0.15;
             z-index: 0;
-            mix-blend-mode: overlay;
-        }
-
-        .page-header h1 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-            position: relative;
-        }
-
-        .page-header p {
-            font-size: 1.5rem;
-            margin-bottom: 2.5rem;
-            opacity: 0.95;
-            color: #ffffff;
-            font-weight: 500;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-            position: relative;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* Education Section */
-        .education-section {
-            padding: 6rem 0;
-            position: relative;
-            background-color: rgba(249, 251, 253, 0.9);
         }
 
         .education-timeline {
@@ -193,19 +139,6 @@
             font-weight: bold;
             color: var(--secondary-color);
             font-size: 1.2rem;
-            position: relative;
-        }
-
-        .timeline-date::after {
-            content: '';
-            position: absolute;
-            right: 20px;
-            top: 10px;
-            width: 15px;
-            height: 15px;
-            background-color: var(--secondary-color);
-            border-radius: 50%;
-            z-index: 1;
         }
 
         .timeline-content {
@@ -213,28 +146,16 @@
             padding: 30px;
             background-color: white;
             border-radius: 10px;
-            border-left: 4px solid var(--secondary-color);
+            border-left: 3px solid var(--secondary-color);
             position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
         }
 
-        .timeline-content::before {
-            content: '';
-            position: absolute;
-            left: -40px;
-            top: 20px;
-            width: 0;
-            height: 0;
-            border-top: 15px solid transparent;
-            border-bottom: 15px solid transparent;
-            border-right: 15px solid var(--secondary-color);
-        }
-
         .timeline-content:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .timeline-content h3 {
@@ -323,15 +244,15 @@
             padding: 30px;
             border-radius: 10px;
             margin-bottom: 40px;
-            border-left: 4px solid var(--secondary-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-left: 3px solid var(--secondary-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
         }
 
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
         }
 
         .project-card h3 {
@@ -588,19 +509,10 @@
                 font-size: 1.1rem;
             }
 
-            .timeline-date::after {
-                left: -5px;
-                top: 25px;
-            }
-
             .timeline-content {
                 border-left: none;
-                border-top: 4px solid var(--secondary-color);
+                border-top: 3px solid var(--secondary-color);
                 padding: 25px;
-            }
-
-            .timeline-content::before {
-                display: none;
             }
 
             .timeline-content h3 {
@@ -632,39 +544,6 @@
             .academic-projects h2 {
                 font-size: 1.6rem;
                 margin-bottom: 30px;
-            }
-        }
-
-        /* Mobile menu styles */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                gap: 2rem;
-                transition: all 0.3s ease;
-                z-index: 999;
-            }
-
-            .nav-links.active {
-                left: 0;
             }
         }
     </style>
@@ -824,7 +703,6 @@
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navLinks = document.getElementById('navLinks');
-        const header = document.querySelector('.glass-nav');
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
@@ -841,15 +719,6 @@
 
         // Update year automatically
         document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
     </script>
 </body>
 </html>
