@@ -31,7 +31,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: url('assets/images/Satellite.png') center/cover no-repeat;
+            background: url('assets/images/Satellite_imagery.png') center/cover no-repeat;
             opacity: 0.7;
             z-index: -1;
             filter: brightness(1.1);
@@ -342,11 +342,55 @@
             overflow: hidden;
         }
 
+        /* Triangle Network Background for Footer */
+        .triangles-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            opacity: 0.4;
+        }
+
+        .triangles-bg svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .triangles-bg polygon {
+            stroke: rgba(255,255,255,0.6);
+            stroke-width: 0.8;
+            fill: none;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) translateX(0);
+            }
+            25% {
+                transform: translateY(-8px) translateX(5px);
+            }
+            50% {
+                transform: translateY(5px) translateX(-5px);
+            }
+            75% {
+                transform: translateY(-5px) translateX(8px);
+            }
+        }
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 3rem;
             margin-bottom: 3rem;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-about h3 {
@@ -354,6 +398,13 @@
             margin-bottom: 1.5rem;
             font-family: 'Playfair Display', serif;
             color: white;
+        }
+
+        .footer-about p {
+            color: rgba(255,255,255,0.9);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
 
         .footer-social-links {
@@ -416,12 +467,22 @@
             min-width: 25px;
         }
 
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+        }
+
         .footer-bottom {
             text-align: center;
             padding-top: 2rem;
             border-top: 1px solid rgba(255,255,255,0.2);
             color: rgba(255,255,255,0.9);
             font-size: 1.1rem;
+            position: relative;
+            z-index: 1;
         }
 
         /* Responsive */
@@ -595,6 +656,20 @@
     </main>
 
     <footer class="glass-footer">
+        <!-- Triangle Network Background -->
+        <div class="triangles-bg">
+            <svg viewBox="0 0 100 100" preserveAspectRatio="none">
+                <polygon points="10,10 20,30 5,25" />
+                <polygon points="50,5 70,15 60,40" />
+                <polygon points="90,10 85,30 95,25" />
+                <polygon points="15,50 35,60 25,85" />
+                <polygon points="60,55 75,65 65,90" />
+                <polygon points="5,70 25,80 15,95" />
+                <polygon points="40,80 60,90 50,95" />
+                <polygon points="80,70 95,80 85,95" />
+            </svg>
+        </div>
+
         <div class="container">
             <div class="footer-content">
                 <div class="footer-about">
