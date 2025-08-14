@@ -598,6 +598,29 @@
                 height: 200px;
             }
         }
+
+        /* New styles for image comparison */
+        .comparison-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .comparison-image {
+            flex: 1 1 calc(50% - 10px);
+            min-width: 200px;
+            height: 120px;
+            overflow: hidden;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .comparison-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
@@ -645,7 +668,70 @@
                 </div>
 
                 <div class="projects-grid">
-                    <!-- New Project 1 - Seismic Globe -->
+                    <!-- NEW PROJECT: Geospatial Comparative Analysis -->
+                    <div class="project-card" data-category="gis remote-sensing visualization">
+                        <div class="project-visual">
+                            <div class="visual-container">
+                                <div class="comparison-container">
+                                    <div class="comparison-image">
+                                        <img src="assets/images/Nighttime_light_intensity_analysis_(2015-2023)_Iran.png" alt="Nighttime Lights Iran">
+                                    </div>
+                                    <div class="comparison-image">
+                                        <img src="assets/images/Nighttime_light_intensity_analysis_(2015-2023)_Italy.png" alt="Nighttime Lights Italy">
+                                    </div>
+                                    <div class="comparison-image">
+                                        <img src="assets/images/Land_Use_Land_Cover_(LULC)_classification_(2021)_Iran.png" alt="LULC Iran">
+                                    </div>
+                                    <div class="comparison-image">
+                                        <img src="assets/images/Land_Use_Land_Cover_(LULC)_classification_(2021)_Italy.png" alt="LULC Italy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-details">
+                            <h3>Geospatial Comparative Analysis: Iran vs Italy</h3>
+                            <div class="project-meta">
+                                <span class="date">2025</span>
+                                <span class="duration">3 months</span>
+                            </div>
+                            <p class="project-description">
+                                Comprehensive geospatial analysis comparing land use/land cover (LULC) and nighttime lights between Iran and Italy using Google Earth Engine and Python.
+                            </p>
+                            <div class="key-findings">
+                                <h4>Key Features:</h4>
+                                <ul>
+                                    <li>VIIRS nighttime lights analysis (2015-2023)</li>
+                                    <li>ESA WorldCover LULC classification (2021)</li>
+                                    <li>Accuracy assessment with confusion matrices</li>
+                                    <li>Statistical comparison of land cover distributions</li>
+                                </ul>
+                            </div>
+                            <div class="key-findings">
+                                <h4>Technical Implementation:</h4>
+                                <ul>
+                                    <li>Configured Google Earth Engine API in Jupyter Notebook</li>
+                                    <li>Processed VIIRS monthly composite data for nighttime analysis</li>
+                                    <li>Implemented ESA WorldCover data processing at 10m resolution</li>
+                                    <li>Developed automated accuracy assessment with precision/recall metrics</li>
+                                    <li>Created comparative visualizations with custom legends</li>
+                                </ul>
+                            </div>
+                            <div class="project-tech">
+                                <span>Google Earth Engine</span>
+                                <span>Python</span>
+                                <span>Geemap</span>
+                                <span>Matplotlib</span>
+                                <span>Pandas</span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="#" class="btn primary-btn">View Report</a>
+                                <a href="#" class="btn secondary-btn">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- [Previous project cards remain exactly the same] -->
+                    <!-- Seismic Globe Project -->
                     <div class="project-card" data-category="gis visualization">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -682,7 +768,7 @@
                         </div>
                     </div>
 
-                    <!-- New Project 2 - CityInsights -->
+                    <!-- CityInsights Project -->
                     <div class="project-card" data-category="gis visualization">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -716,7 +802,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 1 - Mediterranean -->
+                    <!-- Mediterranean Project -->
                     <div class="project-card" data-category="gis remote-sensing">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -755,7 +841,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 2 - Boston Crime -->
+                    <!-- Boston Crime Project -->
                     <div class="project-card" data-category="data-science">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -789,7 +875,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 3 - Air Quality -->
+                    <!-- Air Quality Project -->
                     <div class="project-card" data-category="web-development gis">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -823,7 +909,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 4 - SphereStats -->
+                    <!-- SphereStats Project -->
                     <div class="project-card" data-category="gis web-development">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -857,7 +943,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 5 - Netflix -->
+                    <!-- Netflix Project -->
                     <div class="project-card" data-category="data-science">
                         <div class="project-visual">
                             <div class="visual-container">
@@ -891,7 +977,7 @@
                         </div>
                     </div>
 
-                    <!-- Project 6 - Landslide -->
+                    <!-- Landslide Project -->
                     <div class="project-card" data-category="gis remote-sensing">
                         <div class="project-visual">
                             <div class="visual-container">
