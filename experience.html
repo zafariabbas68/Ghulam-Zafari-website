@@ -53,6 +53,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
         }
 
         .logo {
@@ -68,6 +72,41 @@
             margin-right: 10px;
             color: var(--secondary-color);
             font-size: 1.8rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #f0fdf4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--light-color);
         }
 
         /* Header Section */
@@ -176,7 +215,6 @@
         /* Skills section */
         .skills-section {
             margin-top: 80px;
-            padding: 30px;
             position: relative;
         }
 
@@ -187,6 +225,7 @@
             font-size: 2.5rem;
             font-family: 'Playfair Display', serif;
             position: relative;
+            width: 100%;
         }
 
         .skills-section h2::after {
@@ -198,6 +237,12 @@
             width: 80px;
             height: 3px;
             background-color: var(--secondary-color);
+        }
+
+        .skills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .skills-grid {
@@ -250,7 +295,6 @@
         /* References section */
         .references-section {
             margin-top: 80px;
-            padding: 30px;
             position: relative;
         }
 
@@ -261,6 +305,7 @@
             font-size: 2.5rem;
             font-family: 'Playfair Display', serif;
             position: relative;
+            width: 100%;
         }
 
         .references-section h2::after {
@@ -272,6 +317,12 @@
             width: 80px;
             height: 3px;
             background-color: var(--secondary-color);
+        }
+
+        .references-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
         .reference-card {
@@ -300,15 +351,6 @@
         .reference-card strong {
             color: var(--secondary-color);
             font-weight: 600;
-        }
-
-        /* Navigation links */
-        .nav-links a {
-            color: #f0fdf4;
-        }
-
-        .nav-links a.active {
-            color: var(--secondary-color);
         }
 
         /* Triangle Network Background for Footer */
@@ -526,6 +568,35 @@
             .references-section h2 {
                 font-size: 1.8rem;
             }
+
+            /* Mobile Menu Styles */
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: rgba(26, 46, 53, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+                z-index: 1001;
+            }
         }
 
         @media (max-width: 576px) {
@@ -606,60 +677,64 @@
                 </div>
 
                 <div class="skills-section">
-                    <h2>Professional Skills</h2>
-                    <div class="skills-grid">
-                        <div class="skill-category">
-                            <h3>Geospatial Technologies</h3>
-                            <ul>
-                                <li>GIS Analysis & Mapping</li>
-                                <li>Remote Sensing</li>
-                                <li>Cadastral Surveying</li>
-                                <li>Photogrammetry</li>
-                                <li>Drone Image Processing</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Programming & Development</h3>
-                            <ul>
-                                <li>Python (Advanced)</li>
-                                <li>JavaScript</li>
-                                <li>SQL</li>
-                                <li>Web Development</li>
-                                <li>Database Management</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Data Science</h3>
-                            <ul>
-                                <li>Machine Learning</li>
-                                <li>Statistical Analysis</li>
-                                <li>Data Visualization</li>
-                                <li>Data Cleaning</li>
-                                <li>Predictive Modeling</li>
-                            </ul>
-                        </div>
-                        <div class="skill-category">
-                            <h3>Soft Skills</h3>
-                            <ul>
-                                <li>Project Management</li>
-                                <li>Technical Reporting</li>
-                                <li>Team Collaboration</li>
-                                <li>Problem Solving</li>
-                                <li>Continuous Learning</li>
-                            </ul>
+                    <div class="skills-container">
+                        <h2>Professional Skills</h2>
+                        <div class="skills-grid">
+                            <div class="skill-category">
+                                <h3>Geospatial Technologies</h3>
+                                <ul>
+                                    <li>GIS Analysis & Mapping</li>
+                                    <li>Remote Sensing</li>
+                                    <li>Cadastral Surveying</li>
+                                    <li>Photogrammetry</li>
+                                    <li>Drone Image Processing</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Programming & Development</h3>
+                                <ul>
+                                    <li>Python (Advanced)</li>
+                                    <li>JavaScript</li>
+                                    <li>SQL</li>
+                                    <li>Web Development</li>
+                                    <li>Database Management</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Data Science</h3>
+                                <ul>
+                                    <li>Machine Learning</li>
+                                    <li>Statistical Analysis</li>
+                                    <li>Data Visualization</li>
+                                    <li>Data Cleaning</li>
+                                    <li>Predictive Modeling</li>
+                                </ul>
+                            </div>
+                            <div class="skill-category">
+                                <h3>Soft Skills</h3>
+                                <ul>
+                                    <li>Project Management</li>
+                                    <li>Technical Reporting</li>
+                                    <li>Team Collaboration</li>
+                                    <li>Problem Solving</li>
+                                    <li>Continuous Learning</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="references-section">
-                    <h2>References</h2>
-                    <div class="reference-card">
-                        <h3>Prof. Daniele Oxoli, PhD</h3>
-                        <p>Researcher – RTT</p>
-                        <p>Department of Civil and Environmental Engineering</p>
-                        <p>Politecnico di Milano</p>
-                        <p><strong>Email:</strong> daniele.oxoli@polimi.it</p>
-                        <p><strong>Phone:</strong> +39 339 869 7385</p>
+                    <div class="references-container">
+                        <h2>References</h2>
+                        <div class="reference-card">
+                            <h3>Prof. Daniele Oxoli, PhD</h3>
+                            <p>Researcher – RTT</p>
+                            <p>Department of Civil and Environmental Engineering</p>
+                            <p>Politecnico di Milano</p>
+                            <p><strong>Email:</strong> daniele.oxoli@polimi.it</p>
+                            <p><strong>Phone:</strong> +39 339 869 7385</p>
+                        </div>
                     </div>
                 </div>
             </div>
