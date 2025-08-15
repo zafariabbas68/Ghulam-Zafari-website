@@ -70,6 +70,38 @@
             font-size: 1.8rem;
         }
 
+        /* Mobile Menu Toggle - Updated Colors */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            color: var(--secondary-color);
+            font-size: 1.8rem;
+            z-index: 1001;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #f0fdf4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary-color);
+            font-weight: 600;
+        }
+
         /* Header Section */
         .page-header {
             position: relative;
@@ -277,15 +309,6 @@
         strong {
             color: var(--secondary-color);
             font-weight: 600;
-        }
-
-        /* Navigation links */
-        .nav-links a {
-            color: #f0fdf4;
-        }
-
-        .nav-links a.active {
-            color: var(--secondary-color);
         }
 
         /* Triangle Network Background for Footer */
@@ -496,6 +519,29 @@
 
             .page-header h1 {
                 font-size: 2.2rem;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: rgba(26, 46, 53, 0.95);
+                flex-direction: column;
+                align-items: center;
+                padding: 2rem 0;
+                gap: 1.5rem;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 1000;
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
             }
 
             .timeline-item {
