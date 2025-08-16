@@ -23,6 +23,9 @@
             --light-color: #f0fdf4;
             --dark-color: #1a2e35;
             --highlight-color: #d9f99d;
+            --afghan-black: #000000;
+            --afghan-red: #D32011;
+            --afghan-green: #007A36;
         }
 
         /* Background and particles */
@@ -46,14 +49,19 @@
             opacity: 0.7;
         }
 
-        /* Navigation */
+        /* Navigation - Updated with Afghanistan Flag Colors */
         .glass-nav {
-            background: rgba(26, 46, 53, 0.9);
+            background: linear-gradient(to right,
+                var(--afghan-black) 0%, var(--afghan-black) 33%,
+                var(--afghan-red) 33%, var(--afghan-red) 66%,
+                var(--afghan-green) 66%, var(--afghan-green) 100%);
             backdrop-filter: blur(10px);
             box-shadow: 0 2px 20px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 0.8rem 0;
+            border-bottom: 3px solid rgba(255,255,255,0.1);
         }
 
         .container {
@@ -61,6 +69,9 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
@@ -68,14 +79,78 @@
             align-items: center;
             font-weight: 600;
             font-size: 1.3rem;
-            color: var(--light-color);
+            color: white;
             text-decoration: none;
+            background: rgba(0,0,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .logo:hover {
+            background: rgba(0,0,0,0.5);
+            transform: translateX(3px);
         }
 
         .logo-icon {
             margin-right: 10px;
-            color: var(--secondary-color);
+            color: white;
             font-size: 1.8rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 1.8rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 0;
+            position: relative;
+            font-size: 1.05rem;
+        }
+
+        .nav-links a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: white;
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover:after {
+            width: 100%;
+        }
+
+        .nav-links a.active {
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 0 5px rgba(255,255,255,0.5);
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+            transition: transform 0.3s ease;
+            padding: 0.5rem;
         }
 
         /* Header Section */
@@ -316,41 +391,6 @@
             border-radius: 5px;
             margin-top: 20px;
             border: 1px solid rgba(245, 198, 203, 0.3);
-        }
-
-        /* Navigation links */
-        .nav-links {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: #f0fdf4;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--secondary-color);
-        }
-
-        .nav-links a.active {
-            color: var(--secondary-color);
-        }
-
-        /* Menu Toggle Button */
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 1.5rem;
-            color: var(--light-color);
         }
 
         /* Triangle Network Background for Footer */
@@ -643,7 +683,7 @@
     <!-- Background Overlay with Satellite Image -->
     <div class="background-overlay"></div>
 
-    <!-- Navigation -->
+    <!-- Navigation with Afghanistan Flag Colors -->
     <header class="glass-nav">
         <div class="container">
             <a href="index.html" class="logo">
