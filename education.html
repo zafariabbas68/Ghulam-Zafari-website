@@ -53,6 +53,10 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
         }
 
         .logo {
@@ -68,6 +72,42 @@
             margin-right: 10px;
             color: var(--secondary-color);
             font-size: 1.8rem;
+        }
+
+        /* Navigation Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            color: #f0fdf4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+
+        .nav-links a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--light-color);
+            z-index: 1001;
         }
 
         /* Header Section */
@@ -277,15 +317,6 @@
         strong {
             color: var(--secondary-color);
             font-weight: 600;
-        }
-
-        /* Navigation links */
-        .nav-links a {
-            color: #f0fdf4;
-        }
-
-        .nav-links a.active {
-            color: var(--secondary-color);
         }
 
         /* Triangle Network Background for Footer */
@@ -531,6 +562,34 @@
 
             .academic-projects h2 {
                 font-size: 1.8rem;
+            }
+
+            /* Mobile Menu Styles */
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: rgba(26, 46, 53, 0.98);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 0;
+                margin: 0;
+                transition: all 0.5s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            .menu-toggle {
+                display: block;
             }
         }
 
